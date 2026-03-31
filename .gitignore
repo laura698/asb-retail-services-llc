@@ -1,0 +1,10 @@
+node_modules/
+.npmrc
+ehthumbs.db
+Thumbs.db
+*.swp
+public
+.DS_store
+.parcel-cache
+build/
+dist/
