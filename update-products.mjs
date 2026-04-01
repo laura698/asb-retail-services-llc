@@ -16,19 +16,15 @@ import path from 'path';
 
 // ─── Configuración ────────────────────────────────────────────────────────────
 
-const EXCEL_PATH = './omc-multiservices.xlsx';
+const EXCEL_PATH = './catalogo-julio-cash-electronic.xlsx';
 const SRC_DIR    = './src';
 
 // Mapa: nombre de hoja Excel → archivo HTML
 const HOJA_A_HTML = {
-  'Washing Machines':  'category-washing-machines.html',
-  'Refrigerators':     'category-refrigerators.html',
-  'Air Conditioners':  'category-air-conditioners.html',
-  'Televisions':       'category-televisions.html',
-  'Kitchen Appliances':'category-kitchen-appliances.html',
-  'Small Appliances':  'category-small-appliances.html',
+  'Cleaning':          'category-cleaning.html',
+  'Clothing':          'category-clothing.html',
+  'Batteries':         'category-batteries.html',
   'Food & Groceries':  'category-food-groceries.html',
-  'Auto Parts':        'category-auto-parts.html',
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -108,14 +104,10 @@ let actualizados = 0;
 
 // ─── Mapa hoja → data-category slug ──────────────────────────────────────────
 const HOJA_A_SLUG = {
-  'Washing Machines':   'washing-machines',
-  'Refrigerators':      'refrigerators',
-  'Air Conditioners':   'air-conditioners',
-  'Televisions':        'televisions',
-  'Kitchen Appliances': 'kitchen-appliances',
-  'Small Appliances':   'small-appliances',
+  'Cleaning':           'cleaning',
+  'Clothing':           'clothing',
+  'Batteries':          'batteries',
   'Food & Groceries':   'food-groceries',
-  'Auto Parts':         'auto-parts',
 };
 
 function inyectarProductos(htmlPath, tarjetas, label) {
@@ -195,8 +187,7 @@ for (const { productos } of todosLosProductos) {
   }
 }
 // Añadir imágenes de categoría como fallback
-['cat-washing-machines.jpg','cat-refrigerators.jpg','cat-air-conditioners.jpg',
- 'cat-televisions.jpg','cat-kitchen-appliances.jpg','cat-small-appliances.jpg']
+['cat-cleaning.jpg','cat-clothing.jpg','cat-batteries.jpg','cat-food-groceries.jpg']
   .forEach(f => imagenesUsadas.add(f));
 
 const entries = [...imagenesUsadas].sort()

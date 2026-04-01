@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/output.css" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#207891" />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Clothing | ABS RETAIL SERVICES LLC</title>
+      <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{ mobileMenuOpen: false }">
+    <main class="flex flex-col h-screen justify-between">
+
+      <!-- Header -->
+      <div>
+        <header class="mx-auto w-full flex h-16 max-w-[1200px] items-center justify-between px-5">
+          <a href="index.html">
+            <span class="text-xl font-bold text-slate-900">ABS <span class="text-emerald-500">RETAIL SERVICES LLC</span></span>
+          </a>
+
+      <!-- Desktop nav links -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="index.html" data-i18n="Home">Home</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="catalog.html" data-i18n="Catalog">Catalog</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="about-us.html" data-i18n="About Us">About Us</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="contact-us.html" data-i18n="Contact Us">Contact Us</a>
+      </nav>
+
+      <!-- WhatsApp + Language Selector + Cart + Mobile Hamburger -->
+      <div class="flex items-center gap-2">
+          <div class="relative flex-shrink-0" id="lang-dropdown-container">
+            <button id="lang-toggle" class="flex items-center gap-1.5 border border-slate-900 rounded px-3 py-1.5 text-sm text-slate-900 font-medium hover:bg-slate-50 transition-colors">
+              <span id="lang-flag"></span>
+              <span id="lang-label">EN</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-3.5 w-3.5 ml-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <div id="lang-menu" class="hidden absolute right-0 mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 overflow-hidden">
+              <button class="lang-option flex items-center gap-2 px-4 py-2 w-full text-sm hover:bg-gray-50 transition-colors" data-lang="en">
+                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30' class='h-4 w-6 rounded-sm flex-shrink-0'><clipPath id='ca'><path d='M0 0v30h60V0z'/></clipPath><clipPath id='cb'><path d='M30 15h30v15zM0 15h30zM30 0h30zM0 0h30v15z'/></clipPath><g clip-path='url(#ca)'><path d='M0 0v30h60V0z' fill='#012169'/><path d='M0 0l60 30M60 0L0 30' stroke='#fff' stroke-width='6'/><path d='M0 0l60 30M60 0L0 30' clip-path='url(#cb)' stroke='#C8102E' stroke-width='4'/><path d='M30 0v30M0 15h60' stroke='#fff' stroke-width='10'/><path d='M30 0v30M0 15h60' stroke='#C8102E' stroke-width='6'/></g></svg><span>EN</span>
+              </button>
+              <button class="lang-option flex items-center gap-2 px-4 py-2 w-full text-sm hover:bg-gray-50 transition-colors" data-lang="es">
+                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2' class='h-4 w-6 rounded-sm flex-shrink-0'><rect width='3' height='2' fill='#c60b1e'/><rect y='.5' width='3' height='1' fill='#ffc400'/></svg><span>ES</span>
+              </button>
+            </div>
+          </div>
+          <a href="cart.html" class="relative flex items-center group" aria-label="Cart">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="h-6 w-6 text-slate-900 group-hover:text-emerald-500 transition-colors"><path d="M164.96 300.004h.024c.02 0 .04-.004.059-.004H437a15.003 15.003 0 0014.422-10.879l60-210a15.003 15.003 0 00-2.445-13.152A15.006 15.006 0 00497 60H130.367l-10.722-48.254A15.003 15.003 0 00105 0H15C6.715 0 0 6.715 0 15s6.715 15 15 15h77.969l56.422 253.879C131.137 297.652 120 316.258 120 337c0 30.328 24.672 55 55 55h10c0 28.988 23.512 52.5 52.5 52.5S290 420.988 290 392h72c0 28.988 23.512 52.5 52.5 52.5S467 420.988 467 392h15c8.285 0 15-6.715 15-15s-6.715-15-15-15H175c-13.785 0-25-11.215-25-25 0-11.293 7.559-20.82 17.879-23.828l-2.918-13.168zM237.5 414.5c-12.426 0-22.5-10.074-22.5-22.5s10.074-22.5 22.5-22.5S260 379.574 260 392s-10.074 22.5-22.5 22.5zm177 0c-12.426 0-22.5-10.074-22.5-22.5s10.074-22.5 22.5-22.5S437 379.574 437 392s-10.074 22.5-22.5 22.5zM142.133 90h340.727l-51.43 180H168.566L142.133 90z"/></svg>
+            <span class="cart-badge absolute -top-2 -right-2 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-emerald-500 text-[10px] font-bold text-white" style="display:none">0</span>
+          </a>
+          <!-- Mobile hamburger -->
+          <button class="md:hidden" @click="mobileMenuOpen = ! mobileMenuOpen">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+          </button>
+        </div><!-- /flex wrapper -->
+    </header>
+
+        <!-- Burger menu (mobile) -->
+        <section x-show="mobileMenuOpen" @click.outside="mobileMenuOpen = false"
+          class="absolute left-0 right-0 z-50 h-screen w-full bg-white" style="display: none">
+          <div class="mx-auto">
+            <ul class="text-center font-medium">
+              <li class="py-2"><a href="index.html" data-i18n="Home">Home</a></li>
+              <li class="py-2"><a href="catalog.html" data-i18n="Catalog">Catalog</a></li>
+              <li class="py-2"><a href="about-us.html" data-i18n="About Us">About Us</a></li>
+              <li class="py-2"><a href="contact-us.html" data-i18n="Contact Us">Contact Us</a></li>
+            </ul>
+          </div>
+        </section>
+
+
+        <!-- Breadcrumbs -->
+        <div class="mx-auto w-full max-w-[1200px] px-5 py-3">
+          <nav>
+            <ul class="flex items-center text-sm">
+              <li>
+                <a href="index.html" class="text-gray-500 hover:text-slate-900">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                    <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"/>
+                    <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"/>
+                  </svg>
+                </a>
+              </li>
+              <li><span class="mx-2 text-gray-500">&gt;</span></li>
+              <li class="text-gray-500" data-i18n="Clothing">Clothing</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <section class="container mx-auto flex-grow max-w-[1200px] border-b py-5 lg:flex lg:flex-row lg:py-10">
+
+        <!-- Sidebar -->
+        <section class="hidden w-[300px] flex-shrink-0 px-4 lg:block">
+          <div class="flex border-b pb-5">
+            <div class="w-full">
+              <p class="mb-3 font-medium" data-i18n="CATEGORIES">CATEGORIES</p>
+              
+              <div class="flex w-full justify-between">
+                <div class="flex justify-center items-center">
+                  <input type="checkbox" />
+                  <p class="ml-4">T-Shirts</p>
+                </div>
+                <div><p class="text-gray-500">(48)</p></div>
+              </div>
+              <div class="flex w-full justify-between">
+                <div class="flex justify-center items-center">
+                  <input type="checkbox" />
+                  <p class="ml-4">Pants</p>
+                </div>
+                <div><p class="text-gray-500">(32)</p></div>
+              </div>
+              <div class="flex w-full justify-between">
+                <div class="flex justify-center items-center">
+                  <input type="checkbox" />
+                  <p class="ml-4">Footwear</p>
+                </div>
+                <div><p class="text-gray-500">(24)</p></div>
+              </div>
+              <div class="flex w-full justify-between">
+                <div class="flex justify-center items-center">
+                  <input type="checkbox" />
+                  <p class="ml-4">Accessories</p>
+                </div>
+                <div><p class="text-gray-500">(16)</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex border-b py-5">
+            <div class="w-full">
+              <p class="mb-3 font-medium">BRANDS</p>
+              
+              <div class="flex w-full justify-between">
+                <div class="flex justify-center items-center">
+                  <input type="checkbox" />
+                  <p class="ml-4">Hanes</p>
+                </div>
+                <div><p class="text-gray-500">(28)</p></div>
+              </div>
+              <div class="flex w-full justify-between">
+                <div class="flex justify-center items-center">
+                  <input type="checkbox" />
+                  <p class="ml-4">Levi's</p>
+                </div>
+                <div><p class="text-gray-500">(34)</p></div>
+              </div>
+              <div class="flex w-full justify-between">
+                <div class="flex justify-center items-center">
+                  <input type="checkbox" />
+                  <p class="ml-4">Nike</p>
+                </div>
+                <div><p class="text-gray-500">(22)</p></div>
+              </div>
+              <div class="flex w-full justify-between">
+                <div class="flex justify-center items-center">
+                  <input type="checkbox" />
+                  <p class="ml-4">Wrangler</p>
+                </div>
+                <div><p class="text-gray-500">(18)</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex border-b py-5">
+            <div class="w-full">
+              <p class="mb-3 font-medium">PRICE</p>
+              <div class="flex w-full">
+                <div class="flex justify-between">
+                  <input min="50" type="number" class="h-8 w-[90px] border pl-2" placeholder="50" />
+                  <span class="px-3">-</span>
+                  <input type="number" max="999999" class="h-8 w-[90px] border pl-2" placeholder="99999" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex py-5">
+            <div class="w-full">
+              <p class="mb-3 font-medium">RATING</p>
+              <div class="flex flex-col gap-2">
+                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="rating" /> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg></label>
+                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="rating" /> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-gray-200"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg></label>
+                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="rating" /> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-gray-200"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-gray-200"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg></label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Products -->
+        <div class="flex-grow">
+          <div class="mb-5 flex items-center justify-between px-5">
+            <div class="flex gap-3">
+              <button class="flex items-center justify-center border px-6 py-2"><span data-i18n="Sort by">Sort by</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-2 h-4 w-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+                </svg>
+              </button>
+              <button class="flex items-center justify-center border px-6 py-2 md:hidden"><span data-i18n="Filters">Filters</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-2 h-4 w-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+                </svg>
+              </button>
+            </div>
+            <div class="hidden gap-3 lg:flex">
+              <button class="border bg-emerald-500 py-2 px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/>
+                </svg>
+              </button>
+              <button class="border py-2 px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <section class="mx-auto grid max-w-[1200px] grid-cols-2 gap-3 px-5 pb-10 lg:grid-cols-3">
+            <!-- PRODUCTOS:START -->
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-1.jpg" alt="Hanes ComfortSoft T-Shirt 3pk" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 25% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Hanes ComfortSoft T-Shirt 3pk</p>
+                <p class="font-medium text-violet-900">$14.99 <span class="text-sm text-gray-500 line-through">$19.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(312)</p></div>
+                <a href="product-detail.html#n=Hanes+ComfortSoft+T-Shirt+3pk&p=14.99&po=19.99&img=clothing-1.jpg&b=Hanes&m=HNS-3PK-W&d=Pack+de+3+camisetas+Hanes+ComfortSoft%2C+algod%C3%B3n+100%25.+Disponible+en+blanco%2C+cuello+redondo.&r=4.5&rv=312&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-2.jpg" alt="Levi's 505 Regular Fit Jeans" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 33% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Levi's 505 Regular Fit Jeans</p>
+                <p class="font-medium text-violet-900">$39.99 <span class="text-sm text-gray-500 line-through">$59.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(256)</p></div>
+                <a href="product-detail.html#n=Levi%27s+505+Regular+Fit+Jeans&p=39.99&po=59.99&img=clothing-2.jpg&b=Levi%27s&m=LEV-505RF&d=Jeans+Levi%27s+505+corte+regular%2C+denim+cl%C3%A1sico.+Tiro+medio%2C+pierna+recta.&r=4.7&rv=256&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-3.jpg" alt="Fruit of the Loom Boxer Briefs 5pk" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 28% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Fruit of the Loom Boxer Briefs 5pk</p>
+                <p class="font-medium text-violet-900">$12.99 <span class="text-sm text-gray-500 line-through">$17.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-gray-300"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(189)</p></div>
+                <a href="product-detail.html#n=Fruit+of+the+Loom+Boxer+Briefs+5pk&p=12.99&po=17.99&img=clothing-3.jpg&b=Fruit+of+the+Loom&m=FOTL-5BB&d=Pack+de+5+boxer+briefs%2C+algod%C3%B3n+transpirable+con+cintura+el%C3%A1stica+CoolZone.&r=4.4&rv=189&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-4.jpg" alt="Gildan Heavy Blend Hoodie" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 29% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Gildan Heavy Blend Hoodie</p>
+                <p class="font-medium text-violet-900">$19.99 <span class="text-sm text-gray-500 line-through">$27.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(178)</p></div>
+                <a href="product-detail.html#n=Gildan+Heavy+Blend+Hoodie&p=19.99&po=27.99&img=clothing-4.jpg&b=Gildan&m=GLD-HBH&d=Sudadera+con+capucha+Gildan+Heavy+Blend%2C+mezcla+algod%C3%B3n%2Fpoli%C3%A9ster.+Bolsillo+canguro.&r=4.6&rv=178&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-5.jpg" alt="Dickies Original 874 Work Pants" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 24% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Dickies Original 874 Work Pants</p>
+                <p class="font-medium text-violet-900">$24.99 <span class="text-sm text-gray-500 line-through">$32.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(345)</p></div>
+                <a href="product-detail.html#n=Dickies+Original+874+Work+Pants&p=24.99&po=32.99&img=clothing-5.jpg&b=Dickies&m=DCK-874&d=Pantal%C3%B3n+de+trabajo+Dickies+874%2C+tela+resistente+a+las+arrugas.+Corte+cl%C3%A1sico+recto.&r=4.8&rv=345&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-6.jpg" alt="Champion Powerblend Crew Sweatshirt" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 25% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Champion Powerblend Crew Sweatshirt</p>
+                <p class="font-medium text-violet-900">$29.99 <span class="text-sm text-gray-500 line-through">$39.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(167)</p></div>
+                <a href="product-detail.html#n=Champion+Powerblend+Crew+Sweatshirt&p=29.99&po=39.99&img=clothing-6.jpg&b=Champion&m=CHP-PBC&d=Sudadera+cuello+redondo+Champion+Powerblend%2C+forro+fleece.+Logo+C+bordado+en+el+pecho.&r=4.5&rv=167&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-7.jpg" alt="Wrangler Cargo Shorts" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 24% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Wrangler Cargo Shorts</p>
+                <p class="font-medium text-violet-900">$18.99 <span class="text-sm text-gray-500 line-through">$24.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-gray-300"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(134)</p></div>
+                <a href="product-detail.html#n=Wrangler+Cargo+Shorts&p=18.99&po=24.99&img=clothing-7.jpg&b=Wrangler&m=WRG-CS&d=Shorts+cargo+Wrangler+con+bolsillos+laterales.+Tela+ripstop+duradera%2C+cintura+flexible.&r=4.3&rv=134&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-8.jpg" alt="Carhartt Pocket T-Shirt" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 26% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Carhartt Pocket T-Shirt</p>
+                <p class="font-medium text-violet-900">$16.99 <span class="text-sm text-gray-500 line-through">$22.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(223)</p></div>
+                <a href="product-detail.html#n=Carhartt+Pocket+T-Shirt&p=16.99&po=22.99&img=clothing-8.jpg&b=Carhartt&m=CRH-PKT&d=Camiseta+Carhartt+con+bolsillo%2C+algod%C3%B3n+jersey+pesado+6.75oz.+Costuras+reforzadas.&r=4.7&rv=223&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-9.jpg" alt="Hanes EcoSmart Fleece Joggers" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 27% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Hanes EcoSmart Fleece Joggers</p>
+                <p class="font-medium text-violet-900">$15.99 <span class="text-sm text-gray-500 line-through">$21.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-gray-300"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(156)</p></div>
+                <a href="product-detail.html#n=Hanes+EcoSmart+Fleece+Joggers&p=15.99&po=21.99&img=clothing-9.jpg&b=Hanes&m=HNS-ESJ&d=Joggers+Hanes+EcoSmart%2C+forro+fleece+suave.+Cintura+el%C3%A1stica+con+cord%C3%B3n%2C+pu%C3%B1os+en+los+tobillos.&r=4.4&rv=156&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <div class="flex flex-col border rounded overflow-hidden">
+              <div class="relative flex h-56 overflow-hidden">
+                <img class="h-full w-full object-contain" src="./assets/images/clothing-10.jpg" alt="Russell Athletic Dri-Power Polo" />
+                <div class="absolute right-1 mt-3 flex items-center justify-center bg-amber-400">
+                  <p class="px-2 py-2 text-sm">&minus; 28% OFF</p>
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="mt-2 text-sm uppercase font-medium">Russell Athletic Dri-Power Polo</p>
+                <p class="font-medium text-violet-900">$17.99 <span class="text-sm text-gray-500 line-through">$24.99</span></p>
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-yellow-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><p class="text-sm text-gray-400 ml-1">(145)</p></div>
+                <a href="product-detail.html#n=Russell+Athletic+Dri-Power+Polo&p=17.99&po=24.99&img=clothing-10.jpg&b=Russell+Athletic&m=RA-DPP&d=Polo+Russell+Athletic+con+tecnolog%C3%ADa+Dri-Power%2C+absorbe+la+humedad.+Cuello+de+3+botones.&r=4.5&rv=145&cat=clothing" class="mt-3 flex h-10 w-full items-center justify-center bg-violet-900 text-white text-sm hover:bg-violet-800 duration-100"><span data-i18n="View Details">View Details</span></a>
+              </div>
+            </div>
+            <!-- PRODUCTOS:END -->
+          </section>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mx-auto w-full max-w-[1200px] justify-between pb-10 flex flex-col lg:flex-row">
+        <div class="ml-5">
+          <p class="mt-10 mb-5 text-xl font-bold text-slate-900">ABS <span class="text-emerald-500">RETAIL SERVICES LLC</span></p>
+          <p class="pl-0">Cleaning, clothing, batteries & groceries <br /> at the best prices.</p>
+          <div class="mt-10 flex gap-3">
+            <a href="#"><img class="h-5 w-5 cursor-pointer" src="./assets/images/github.svg" alt="github icon" /></a>
+            <a href="#"><img class="h-5 w-5 cursor-pointer" src="./assets/images/telegram.svg" alt="telegram icon" /></a>
+            <a href="#"><img class="h-5 w-5 cursor-pointer" src="./assets/images/linkedin.svg" alt="linkedin icon" /></a>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="mx-5 mt-10">
+            <p class="font-medium text-gray-500" data-i18n="CATEGORIES">CATEGORIES</p>
+            <ul class="text-sm leading-8">
+              <li><a href="category-cleaning.html">Cleaning</a></li>
+              <li><a href="category-clothing.html">Clothing</a></li>
+              <li><a href="category-batteries.html">Batteries</a></li>
+              <li><a href="category-food-groceries.html">Food &amp; Groceries</a></li>
+            </ul>
+          </div>
+          <div class="mx-5 mt-10">
+            <p class="font-medium text-gray-500">SUPPORT</p>
+            <ul class="text-sm leading-8">
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Docs</a></li>
+              <li><a href="#">Warranty</a></li>
+              <li><a href="contact-us.html" data-i18n="Contact Us">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="mx-5 mt-10">
+            <p class="font-medium text-gray-500">COMPANY</p>
+            <ul class="text-sm leading-8">
+              <li><a href="about-us.html" data-i18n="About Us">About Us</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">License</a></li>
+            </ul>
+          </div>
+          <div class="mx-5 mt-10">
+            <p class="font-medium text-gray-500">DELIVERY</p>
+            <ul class="text-sm leading-8">
+              <li><a href="#">Countries</a></li>
+              <li><a href="#">Restrictions</a></li>
+              <li><a href="#">Payment</a></li>
+              <li><a href="#">Tracking</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+      <section class="h-11 bg-emerald-500">
+        <div class="mx-auto flex max-w-[1200px] items-center justify-between px-4 pt-2">
+          <p>&copy; ABS RETAIL SERVICES LLC, 2024</p>
+          <div class="flex items-center space-x-3">
+            <img class="h-8" src="https://cdn-icons-png.flaticon.com/512/5968/5968299.png" alt="Visa" />
+            <img class="h-8" src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="AE" />
+            <img class="h-8" src="https://cdn-icons-png.flaticon.com/512/5968/5968144.png" alt="Apple Pay" />
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/lang.js"></script>
+    
+  </body>
+</html>

@@ -12,28 +12,32 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#207891" />
     <meta name="msapplication-TileColor" content="#ffc40d" />
     <meta name="theme-color" content="#ffffff" />
-    <title>Food & Groceries | OMC MULTISERVICE LLC</title>
+    <title>Food & Groceries | ABS RETAIL SERVICES LLC</title>
       <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
   </head>
 
-  <body x-data="{ desktopMenuOpen: false, mobileMenuOpen: false }">
+  <body x-data="{ mobileMenuOpen: false }">
     <main class="flex flex-col h-screen justify-between">
 
       <!-- Header -->
       <div>
         <header class="mx-auto w-full flex h-16 max-w-[1200px] items-center justify-between px-5">
           <a href="index.html">
-            <span class="text-xl font-bold text-slate-900">OMC <span class="text-emerald-500">MULTISERVICE LLC</span></span>
+            <span class="text-xl font-bold text-slate-900">ABS <span class="text-emerald-500">RETAIL SERVICES LLC</span></span>
           </a>
 
-                <!-- WhatsApp + Language Selector + Cart + Mobile Hamburger -->
+      <!-- Desktop nav links -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="index.html" data-i18n="Home">Home</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="catalog.html" data-i18n="Catalog">Catalog</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="about-us.html" data-i18n="About Us">About Us</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="contact-us.html" data-i18n="Contact Us">Contact Us</a>
+      </nav>
+
+      <!-- WhatsApp + Language Selector + Cart + Mobile Hamburger -->
       <div class="flex items-center gap-2">
-          <a href="https://wa.me/18136685884" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-1.5 rounded bg-emerald-500 px-3 py-1.5 text-sm font-medium text-white hover:bg-emerald-400 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span data-i18n="WhatsApp">WhatsApp</span>
-          </a>
           <div class="relative flex-shrink-0" id="lang-dropdown-container">
             <button id="lang-toggle" class="flex items-center gap-1.5 border border-slate-900 rounded px-3 py-1.5 text-sm text-slate-900 font-medium hover:bg-slate-50 transition-colors">
               <span id="lang-flag"></span>
@@ -75,93 +79,6 @@
           </div>
         </section>
 
-        <!-- Nav bar -->
-        <nav class="relative bg-slate-900">
-          <div class="hidden h-12 w-full items-center justify-center md:flex">
-            <button @click="desktopMenuOpen = ! desktopMenuOpen"
-              class="ml-5 flex h-full w-40 cursor-pointer items-center justify-center bg-emerald-500">
-              <div class="flex justify-around">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-1 h-6 w-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
-                </svg><span data-i18n="All categories">All categories</span></div>
-            </button>
-            <div class="mx-7 flex gap-8">
-              <a class="font-light text-white duration-100 hover:text-emerald-400 hover:underline" href="index.html" data-i18n="Home">Home</a>
-              <a class="font-light text-white duration-100 hover:text-emerald-400 hover:underline" href="catalog.html" data-i18n="Catalog">Catalog</a>
-              <a class="font-light text-white duration-100 hover:text-emerald-400 hover:underline" href="about-us.html" data-i18n="About Us">About Us</a>
-              <a class="font-light text-white duration-100 hover:text-emerald-400 hover:underline" href="contact-us.html" data-i18n="Contact Us">Contact Us</a>
-            </div>
-          </div>
-        </nav>
-
-        <!-- All categories dropdown -->
-        <section x-show="desktopMenuOpen" @click.outside="desktopMenuOpen = false"
-          class="absolute left-0 right-0 z-10 w-full border-b border-r border-l bg-white" style="display: none">
-          <div class="mx-auto flex max-w-[1200px] py-10">
-            <div class="w-[300px] border-r">
-              <div class="px-5">
-                
-            <a href="category-food-groceries.html" class="active:blue-900 flex items-center gap-2 bg-emerald-500 py-2 px-3 active:bg-emerald-500">
-              <img width="15px" height="15px" src="./assets/images/bed.svg" alt="Appliances icon" />
-              Appliances
-              <span class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></span>
-            </a>
-
-            <a href="category-refrigerators.html" class="active:blue-900 flex items-center gap-2 py-2 px-3 hover:bg-neutral-100 active:bg-emerald-500">
-              <img width="15px" height="15px" src="./assets/images/sleep.svg" alt="Auto Parts icon" />
-              Auto Parts
-              <span class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></span>
-            </a>
-
-            <a href="category-air-conditioners.html" class="active:blue-900 flex items-center gap-2 py-2 px-3 hover:bg-neutral-100 active:bg-emerald-500">
-              <img width="15px" height="15px" src="./assets/images/outdoor.svg" alt="Food & Groceries icon" />
-              Food & Groceries
-              <span class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></span>
-            </a>
-
-
-
-              </div>
-            </div>
-            
-            <div class="flex w-full justify-between">
-              <div class="flex gap-6">
-                <div class="mx-5">
-                  <p class="font-medium text-gray-500">APPLIANCES</p>
-                  <ul class="text-sm leading-8">
-                    <li><a href="category-food-groceries.html">Samsung WD Pro</a></li>
-                    <li><a href="category-food-groceries.html">LG TurboWash 360</a></li>
-                    <li><a href="category-food-groceries.html">Whirlpool HE Washer</a></li>
-                    <li><a href="category-food-groceries.html">Bosch Series 8</a></li>
-                  </ul>
-                </div>
-                <div class="mx-5">
-                  <p class="font-medium text-gray-500">AUTO PARTS</p>
-                  <ul class="text-sm leading-8">
-                    <li><a href="category-refrigerators.html">Samsung French Door</a></li>
-                    <li><a href="category-refrigerators.html">LG InstaView</a></li>
-                    <li><a href="category-refrigerators.html">Whirlpool 4-Door</a></li>
-                    <li><a href="category-refrigerators.html">Bosch Side-by-Side</a></li>
-                  </ul>
-                </div>
-                <div class="mx-5">
-                  <p class="font-medium text-gray-500">FOOD & GROCERIES</p>
-                  <ul class="text-sm leading-8">
-                    <li><a href="category-air-conditioners.html">Daikin Inverter 12k</a></li>
-                    <li><a href="category-air-conditioners.html">Mitsubishi Mini Split</a></li>
-                    <li><a href="category-air-conditioners.html">LG Dual Cool</a></li>
-                    <li><a href="category-air-conditioners.html">Carrier Xpower</a></li>
-                  </ul>
-                </div>
-                <div class="mx-5">
-                  <p class="font-medium text-gray-500">FEATURED</p>
-                  <ul class="text-sm leading-8">
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <!-- Breadcrumbs -->
         <div class="mx-auto w-full max-w-[1200px] px-5 py-3">
@@ -176,7 +93,7 @@
                 </a>
               </li>
               <li><span class="mx-2 text-gray-500">&gt;</span></li>
-              <li class="text-gray-500">Appliances</li>
+              <li class="text-gray-500" data-i18n="Food &amp; Groceries">Food &amp; Groceries</li>
             </ul>
           </nav>
         </div>
@@ -194,28 +111,28 @@
               <div class="flex w-full justify-between">
                 <div class="flex justify-center items-center">
                   <input type="checkbox" />
-                  <p class="ml-4">Front Load</p>
+                  <p class="ml-4">Grains & Rice</p>
                 </div>
                 <div><p class="text-gray-500">(48)</p></div>
               </div>
               <div class="flex w-full justify-between">
                 <div class="flex justify-center items-center">
                   <input type="checkbox" />
-                  <p class="ml-4">Top Load</p>
+                  <p class="ml-4">Oils & Condiments</p>
                 </div>
                 <div><p class="text-gray-500">(32)</p></div>
               </div>
               <div class="flex w-full justify-between">
                 <div class="flex justify-center items-center">
                   <input type="checkbox" />
-                  <p class="ml-4">Washer-Dryer</p>
+                  <p class="ml-4">Canned Goods</p>
                 </div>
                 <div><p class="text-gray-500">(24)</p></div>
               </div>
               <div class="flex w-full justify-between">
                 <div class="flex justify-center items-center">
                   <input type="checkbox" />
-                  <p class="ml-4">Mini Washer</p>
+                  <p class="ml-4">Baking & Spices</p>
                 </div>
                 <div><p class="text-gray-500">(16)</p></div>
               </div>
@@ -228,28 +145,28 @@
               <div class="flex w-full justify-between">
                 <div class="flex justify-center items-center">
                   <input type="checkbox" />
-                  <p class="ml-4">Samsung</p>
+                  <p class="ml-4">Goya</p>
                 </div>
                 <div><p class="text-gray-500">(28)</p></div>
               </div>
               <div class="flex w-full justify-between">
                 <div class="flex justify-center items-center">
                   <input type="checkbox" />
-                  <p class="ml-4">LG</p>
+                  <p class="ml-4">Bustelo</p>
                 </div>
                 <div><p class="text-gray-500">(34)</p></div>
               </div>
               <div class="flex w-full justify-between">
                 <div class="flex justify-center items-center">
                   <input type="checkbox" />
-                  <p class="ml-4">Whirlpool</p>
+                  <p class="ml-4">Harina PAN</p>
                 </div>
                 <div><p class="text-gray-500">(22)</p></div>
               </div>
               <div class="flex w-full justify-between">
                 <div class="flex justify-center items-center">
                   <input type="checkbox" />
-                  <p class="ml-4">Bosch</p>
+                  <p class="ml-4">Royal</p>
                 </div>
                 <div><p class="text-gray-500">(18)</p></div>
               </div>
@@ -456,8 +373,8 @@
       <!-- Footer -->
       <footer class="mx-auto w-full max-w-[1200px] justify-between pb-10 flex flex-col lg:flex-row">
         <div class="ml-5">
-          <p class="mt-10 mb-5 text-xl font-bold text-slate-900">OMC <span class="text-emerald-500">MULTISERVICE LLC</span></p>
-          <p class="pl-0">Appliances, auto parts & groceries <br /> at the best prices.</p>
+          <p class="mt-10 mb-5 text-xl font-bold text-slate-900">ABS <span class="text-emerald-500">RETAIL SERVICES LLC</span></p>
+          <p class="pl-0">Cleaning, clothing, batteries & groceries <br /> at the best prices.</p>
           <div class="mt-10 flex gap-3">
             <a href="#"><img class="h-5 w-5 cursor-pointer" src="./assets/images/github.svg" alt="github icon" /></a>
             <a href="#"><img class="h-5 w-5 cursor-pointer" src="./assets/images/telegram.svg" alt="telegram icon" /></a>
@@ -468,9 +385,10 @@
           <div class="mx-5 mt-10">
             <p class="font-medium text-gray-500" data-i18n="CATEGORIES">CATEGORIES</p>
             <ul class="text-sm leading-8">
-              <li><a href="category-food-groceries.html">Appliances</a></li>
-              <li><a href="category-refrigerators.html">Auto Parts</a></li>
-              <li><a href="category-air-conditioners.html">Food & Groceries</a></li>
+              <li><a href="category-cleaning.html">Cleaning</a></li>
+              <li><a href="category-clothing.html">Clothing</a></li>
+              <li><a href="category-batteries.html">Batteries</a></li>
+              <li><a href="category-food-groceries.html">Food &amp; Groceries</a></li>
             </ul>
           </div>
           <div class="mx-5 mt-10">
@@ -505,7 +423,7 @@
 
       <section class="h-11 bg-emerald-500">
         <div class="mx-auto flex max-w-[1200px] items-center justify-between px-4 pt-2">
-          <p>&copy; OMC MULTISERVICE LLC, 2024</p>
+          <p>&copy; ABS RETAIL SERVICES LLC, 2024</p>
           <div class="flex items-center space-x-3">
             <img class="h-8" src="https://cdn-icons-png.flaticon.com/512/5968/5968299.png" alt="Visa" />
             <img class="h-8" src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="AE" />

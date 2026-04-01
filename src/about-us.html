@@ -20,7 +20,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
   </head>
 
-  <body x-data="{ desktopMenuOpen: false, mobileMenuOpen: false}">
+  <body x-data="{ mobileMenuOpen: false}">
     <main class="h-screen flex flex-col justify-between">
       <div>
         <!-- Header -->
@@ -28,18 +28,19 @@
           class="mx-auto w-full flex h-16 max-w-[1200px] items-center justify-between px-5"
         >
           <a href="index.html">
-            <span class="text-xl font-bold text-slate-900">OMC <span class="text-emerald-500">MULTISERVICE LLC</span></span>
+            <span class="text-xl font-bold text-slate-900">ABS <span class="text-emerald-500">RETAIL SERVICES LLC</span></span>
           </a>
 
-          
-    
-          
+      <!-- Desktop nav links -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="index.html" data-i18n="Home">Home</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="catalog.html" data-i18n="Catalog">Catalog</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="about-us.html" data-i18n="About Us">About Us</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="contact-us.html" data-i18n="Contact Us">Contact Us</a>
+      </nav>
+
       <!-- WhatsApp + Language Selector + Cart + Mobile Hamburger -->
       <div class="flex items-center gap-2">
-          <a href="https://wa.me/18136685884" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-1.5 rounded bg-emerald-500 px-3 py-1.5 text-sm font-medium text-white hover:bg-emerald-400 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span data-i18n="WhatsApp">WhatsApp</span>
-          </a>
           <div class="relative flex-shrink-0" id="lang-dropdown-container">
             <button id="lang-toggle" class="flex items-center gap-1.5 border border-slate-900 rounded px-3 py-1.5 text-sm text-slate-900 font-medium hover:bg-slate-50 transition-colors">
               <span id="lang-flag"></span>
@@ -87,181 +88,109 @@
         </section>
         <!-- /Burger menu  -->
 
-        <!-- Nav bar -->
-        <!-- hidden on small devices -->
-
-        <nav class="relative bg-slate-900">
-          <div
-            class="hidden h-12 w-full items-center justify-center md:flex"
-          >
-            <button
-              @click="desktopMenuOpen = ! desktopMenuOpen"
-              class="flex h-full w-auto cursor-pointer items-center justify-center bg-emerald-500 px-4 whitespace-nowrap"
-            >
-              <div class="flex justify-around" href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="mx-1 h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg><span data-i18n="All categories">All categories</span></div>
-            </button>
-
-            <div class="mx-7 flex gap-8">
-              <a
-                class="font-light text-white duration-100 hover:text-emerald-400 hover:underline"
-                href="index.html"
-                 data-i18n="Home">Home</a
-              >
-              <a
-                class="font-light text-white duration-100 hover:text-emerald-400 hover:underline"
-                href="catalog.html"
-                 data-i18n="Catalog">Catalog</a
-              >
-              <a
-                class="font-light text-white duration-100 hover:text-emerald-400 hover:underline"
-                href="about-us.html"
-                 data-i18n="About Us">About Us</a
-              >
-              <a
-                class="font-light text-white duration-100 hover:text-emerald-400 hover:underline"
-                href="contact-us.html"
-                 data-i18n="Contact Us">Contact Us</a
-              >
+<!-- Hero Section -->
+        <section class="relative bg-slate-900 overflow-hidden">
+          <img src="./assets/images/about-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-15" />
+          <div class="relative z-10 mx-auto max-w-[1200px] px-5 py-16 lg:py-24 flex flex-col lg:flex-row items-center gap-10">
+            <div class="flex-1 text-center lg:text-left">
+              <p class="text-sm font-semibold uppercase tracking-widest text-emerald-400" data-i18n="Who We Are">Who We Are</p>
+              <h1 class="mt-3 text-4xl font-bold text-white sm:text-5xl leading-tight" data-i18n="Your Neighborhood Store">Your Neighborhood<br>Store</h1>
+              <p class="mt-5 text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed" data-i18n="Serving Tampa families with quality products, honest prices, and a personal touch since day one.">Serving Tampa families with quality products, honest prices, and a personal touch since day one.</p>
+              <a href="catalog.html" class="mt-8 inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-6 py-3 font-medium text-white hover:bg-emerald-400 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
+                </svg>
+                <span data-i18n="Go to Catalog">Go to Catalog</span>
+              </a>
             </div>
-
-            
-          </div>
-        </nav>
-        <!-- /Nav bar -->
-
-<!-- Menu  -->
-        <section
-          x-show="desktopMenuOpen"
-          @click.outside="desktopMenuOpen = false"
-          class="absolute left-0 right-0 z-10 w-full border-b border-r border-l bg-white"
-          style="display: none"
-        >
-          <div class="mx-auto flex max-w-[1200px] py-10">
-            <div class="w-[300px] border-r">
-              <div class="px-5">
-                <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="active:blue-900 flex items-center gap-2 bg-emerald-500 py-2 px-3 active:bg-emerald-500 cursor-pointer shadow-sm">
-                  <img width="15px" height="15px" src="./assets/images/bed.svg" alt="Appliances icon" />
-                  Appliances
-                  <span class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></span>
-                </a>
-                <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="active:blue-900 flex items-center gap-2 py-2 px-3 hover:bg-neutral-100 active:bg-emerald-500 cursor-pointer shadow-sm">
-                  <img width="15px" height="15px" src="./assets/images/sleep.svg" alt="Auto Parts icon" />
-                  Auto Parts
-                  <span class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></span>
-                </a>
-                <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="active:blue-900 flex items-center gap-2 py-2 px-3 hover:bg-neutral-100 active:bg-emerald-500 cursor-pointer shadow-sm">
-                  <img width="15px" height="15px" src="./assets/images/outdoor.svg" alt="Food & Groceries icon" />
-                  Food & Groceries
-                  <span class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></span>
-                </a>
-              </div>
-            </div>
-
-            <div class="flex w-full justify-between">
-              <div class="flex gap-6">
-                <div class="mx-5">
-                  <p class="font-medium text-gray-400 uppercase tracking-wider text-xs uppercase" data-i18n="Appliances">APPLIANCES</p>
-                  <ul class="text-sm leading-8 text-gray-800">
-                    <li><a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">Samsung WD Pro</a></li>
-                    <li><a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">LG TurboWash 360</a></li>
-                    <li><a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">Whirlpool HE Washer</a></li>
-                    <li><a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">Bosch Series 8</a></li>
-                  </ul>
+            <div class="flex-1 hidden lg:flex justify-center">
+              <div class="grid grid-cols-2 gap-4 max-w-sm">
+                <div class="rounded-2xl bg-slate-800 p-6 text-center">
+                  <p class="text-3xl font-bold text-emerald-400">4</p>
+                  <p class="mt-1 text-sm text-gray-400" data-i18n="Product Categories">Product Categories</p>
                 </div>
-                <div class="mx-5">
-                  <p class="font-medium text-gray-400 uppercase tracking-wider text-xs uppercase" data-i18n="Auto Parts">AUTO PARTS</p>
-                  <ul class="text-sm leading-8 text-gray-800">
-                    <li><a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">Samsung French Door</a></li>
-                    <li><a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">LG InstaView</a></li>
-                    <li><a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">Whirlpool 4-Door</a></li>
-                    <li><a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">Bosch Side-by-Side</a></li>
-                  </ul>
+                <div class="rounded-2xl bg-slate-800 p-6 text-center">
+                  <p class="text-3xl font-bold text-emerald-400">500+</p>
+                  <p class="mt-1 text-sm text-gray-400" data-i18n="Products Available">Products Available</p>
                 </div>
-                <div class="mx-5">
-                  <p class="font-medium text-gray-400 uppercase tracking-wider text-xs uppercase" data-i18n="Food & Groceries">FOOD & GROCERIES</p>
-                  <ul class="text-sm leading-8 text-gray-800">
-                    <li><a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">Daikin Inverter 12k</a></li>
-                    <li><a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">Mitsubishi Mini Split</a></li>
-                    <li><a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">LG Dual Cool</a></li>
-                    <li><a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">Carrier Xpower</a></li>
-                  </ul>
+                <div class="rounded-2xl bg-slate-800 p-6 text-center">
+                  <p class="text-3xl font-bold text-emerald-400">Tampa</p>
+                  <p class="mt-1 text-sm text-gray-400" data-i18n="Locally Based">Locally Based</p>
                 </div>
-                <div class="mx-5">
-                  <p class="font-medium text-gray-400 uppercase tracking-wider text-xs uppercase" data-i18n="Featured">FEATURED</p>
-                  <ul class="text-sm leading-8 text-gray-800">
-                  </ul>
+                <div class="rounded-2xl bg-slate-800 p-6 text-center">
+                  <p class="text-3xl font-bold text-emerald-400">100%</p>
+                  <p class="mt-1 text-sm text-gray-400" data-i18n="Customer First">Customer First</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <!-- /Menu  -->
-
-        <!-- BG Image  -->
-
-        <div class="relative">
-          <img
-            class="w-full object-cover brightness-50 filter lg:h-[500px]"
-            src="./assets/images/about-hero.jpg"
-            alt="About OMC Multiservice LLC"
-          />
-
-          <div
-            class="absolute top-1/2 left-1/2 mx-auto flex w-11/12 max-w-[1200px] -translate-x-1/2 -translate-y-1/2 flex-col text-center text-white lg:ml-5"
-          >
-            <h1 class="text-4xl font-bold sm:text-5xl" data-i18n="About Us Page Title">About Us</h1>
-            <p class="mx-auto pt-3 text-xs lg:w-3/5 lg:pt-5 lg:text-base">
-              <span data-i18n="About Us Hero Subtitle">We are a multiservice store committed to offering quality appliances, auto parts & groceries — everything your home and vehicle need, all in one place.</span></p>
-          </div>
-        </div>
-
-        <!-- /BG IMAGE  -->
+        <!-- /Hero Section -->
       </div>
 
+      <!-- About Content -->
       <section class="flex-grow">
 
-        <div
-          class="mx-auto my-10 flex max-w-[600px] flex-col items-center justify-center px-5"
-        >
-          <h2 class="w-full text-left text-xl font-bold" data-i18n="Our Mission:">Our Mission:</h2>
-          <p class="py-3" data-i18n="Mission Statement 1">
-            At OMC Multiservice LLC, we exist to simplify the lives of our customers by offering everything they need under one roof — from home appliances and auto parts to everyday groceries. We partner with trusted global brands to guarantee quality, durability, and fair prices on every product we carry.
-          </p>
+        <!-- Intro -->
+        <div class="w-full bg-gray-50">
+          <div class="mx-auto max-w-[1200px] px-5 py-12 lg:py-16">
+            <p class="text-center text-sm font-semibold uppercase tracking-widest text-emerald-500" data-i18n="Our Story">Our Story</p>
+            <h2 class="mt-2 text-center text-2xl font-bold text-slate-900 sm:text-3xl" data-i18n="More Than a Store">More Than a Store</h2>
+            <p class="mx-auto mt-5 max-w-3xl text-center text-gray-600 leading-relaxed" data-i18n="ABS Retail Services LLC was born from a simple idea: families shouldn't have to visit five different stores to get everything they need. We bring together cleaning essentials, clothing, batteries, and fresh groceries under one roof — with the kind of personal service that big-box retailers forgot about.">
+              ABS Retail Services LLC was born from a simple idea: families shouldn't have to visit five different stores to get everything they need. We bring together cleaning essentials, clothing, batteries, and fresh groceries under one roof — with the kind of personal service that big-box retailers forgot about.
+            </p>
 
-          <p class="py-3" data-i18n="Mission Statement 2">
-            More than a store, we are a community ally. We provide personalized advice so every customer finds exactly what they need, whether it's a new refrigerator for the kitchen, a windshield for the car, or pantry essentials for the week — all backed by dedicated after-sales service.
-          </p>
+            <!-- Mission / Vision / Values Cards -->
+            <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-          <h2 class="mt-3 w-full text-left text-xl font-bold" data-i18n="Our Vision:">Our Vision:</h2>
-          <p class="py-3" data-i18n="Vision Statement">
-            To become the leading multiservice retailer in Florida — recognized for convenience, competitive pricing, and an unmatched product selection. We are committed to evolving with the latest technology, sustainable practices, and customer-first innovation so that every household and vehicle is equipped with the very best.
-          </p>
+              <!-- Mission -->
+              <div class="group rounded-xl bg-white p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-emerald-200 transition-all">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-50 text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"/>
+                  </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-bold text-slate-900" data-i18n="Our Mission">Our Mission</h3>
+                <p class="mt-1 text-sm text-gray-500" data-i18n="To make everyday shopping simple and affordable — from trusted cleaning brands and durable clothing to reliable batteries and fresh groceries.">To make everyday shopping simple and affordable — from trusted cleaning brands and durable clothing to reliable batteries and fresh groceries.</p>
+              </div>
 
-          <h2 class="mt-3 w-full text-left text-xl font-bold" data-i18n="Our Values:">Our Values:</h2>
-          <ul class="py-3 flex flex-col gap-3">
-            <li><strong data-i18n="Integrity.">Integrity.</strong> <span data-i18n="integrity-desc">We operate with honesty and transparency in every transaction — no surprises, no hidden costs.</span></li>
-            <li><strong data-i18n="Excellence.">Excellence.</strong> <span data-i18n="excellence-desc">Every product is carefully selected and verified to meet the highest quality standards.</span></li>
-            <li><strong data-i18n="Customer commitment.">Customer commitment.</strong> <span data-i18n="customer-commitment-desc">Your satisfaction drives every decision we make, from product selection to after-sales support.</span></li>
-            <li><strong data-i18n="Innovation.">Innovation.</strong> <span data-i18n="innovation-desc">We stay ahead of market trends to bring you the latest technology and the best deals available.</span></li>
-            <li><strong data-i18n="Community.">Community.</strong> <span data-i18n="community-desc">We proudly serve the Riverview community and are committed to building lasting relationships with our neighbors.</span></li>
-          </ul>
-  
+              <!-- Vision -->
+              <div class="group rounded-xl bg-white p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-emerald-200 transition-all">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-50 text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-bold text-slate-900" data-i18n="Our Vision">Our Vision</h3>
+                <p class="mt-1 text-sm text-gray-500" data-i18n="To become Tampa's most trusted neighborhood retailer — known for unbeatable variety, fair pricing, and a shopping experience that feels like visiting a friend.">To become Tampa's most trusted neighborhood retailer — known for unbeatable variety, fair pricing, and a shopping experience that feels like visiting a friend.</p>
+              </div>
+
+              <!-- Values -->
+              <div class="group rounded-xl bg-white p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-emerald-200 transition-all sm:col-span-2 lg:col-span-1">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-50 text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+                  </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-bold text-slate-900" data-i18n="Our Values">Our Values</h3>
+                <p class="mt-1 text-sm text-gray-500" data-i18n="Honesty in every price tag. Quality in every product. Respect for every customer. Great service isn't a luxury — it's the standard.">Honesty in every price tag. Quality in every product. Respect for every customer. Great service isn't a luxury — it's the standard.</p>
+              </div>
+
+            </div>
           </div>
         </div>
+
+        <!-- CTA Banner -->
+        <div class="bg-slate-900 py-12">
+          <div class="mx-auto max-w-[800px] px-5 text-center">
+            <h3 class="text-2xl font-bold text-white sm:text-3xl" data-i18n="Ready to Shop?">Ready to Shop?</h3>
+            <p class="mt-3 text-gray-400" data-i18n="Browse our full catalog and find everything your home needs.">Browse our full catalog and find everything your home needs.</p>
+            <a href="catalog.html" class="mt-6 inline-block rounded-lg bg-emerald-500 px-8 py-3 text-sm font-bold text-white shadow hover:bg-emerald-400 transition-colors" data-i18n="Go to Catalog">Go to Catalog</a>
+          </div>
+        </div>
+
       </section>
 
       <!-- Desktop Footer  -->
@@ -271,9 +200,9 @@
         class="mx-auto w-full max-w-[1200px] justify-between pb-10 flex flex-col lg:flex-row"
       >
         <div class="ml-5">
-          <p class="mt-10 mb-5 text-xl font-bold text-slate-700">OMC <span class="text-emerald-500">MULTISERVICE LLC</span></p>
+          <p class="mt-10 mb-5 text-xl font-bold text-slate-700">ABS <span class="text-emerald-500">RETAIL SERVICES LLC</span></p>
           <p class="pl-0 text-sm text-gray-400">
-            <span data-i18n="Your trusted source for appliances, auto parts & groceries in Riverview, FL.">Your trusted source for appliances, auto parts & groceries in Riverview, FL.</span>
+            <span data-i18n="Your trusted source for cleaning, clothing, batteries & groceries in Tampa, FL.">Your trusted source for cleaning, clothing, batteries & groceries in Tampa, FL.</span>
           </p>
           <div class="mt-10 flex gap-3">
             <a href="#">
@@ -292,8 +221,9 @@
           <div class="mx-5 mt-10">
             <p class="font-medium text-gray-400 uppercase tracking-wider text-xs" data-i18n="SHOP">SHOP</p>
             <ul class="text-sm leading-8 text-gray-300">
-              <li><a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Appliances">Appliances</a></li>
-              <li><a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Auto Parts">Auto Parts</a></li>
+              <li><a href="catalog.html" data-category="cleaning" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Cleaning">Cleaning</a></li>
+              <li><a href="catalog.html" data-category="clothing" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Clothing">Clothing</a></li>
+              <li><a href="catalog.html" data-category="batteries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Batteries">Batteries</a></li>
               <li><a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Food & Groceries">Food & Groceries</a></li>
             </ul>
           </div>
@@ -314,8 +244,8 @@
               <li><a href="about-us.html" data-i18n="About Us">About Us</a></li>
               <li><a href="contact-us.html" data-i18n="Contact Us">Contact Us</a></li>
 
-              <li><a href="tel:+18136685884">+1 (813) 668-5884</a></li>
-              <li class="text-gray-400">8215 Stoner Rd Lot 603, Riverview, FL 33569</li>
+              <li><a href="tel:+13057996921">+1 (305) 799-6921</a></li>
+              <li class="text-gray-400">14012 Halstead CT Apt 405, Tampa, FL 33613</li>
             </ul>
           </div>
         </div>

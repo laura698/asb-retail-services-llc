@@ -5,34 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/tailwind-ecommerce.css" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#207891" />
     <meta name="msapplication-TileColor" content="#ffc40d" />
     <meta name="theme-color" content="#ffffff" />
 
-    <title>OMC MULTISERVICE LLC</title>
+    <title>ABS RETAIL SERVICES LLC</title>
   </head>
 
-  <body x-data="{ desktopMenuOpen: false, mobileMenuOpen: false, activeCategory: 'appliances'}">
+  <body x-data="{ mobileMenuOpen: false, activeCategory: 'cleaning'}">
     <!-- Header -->
     <header
       class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5"
     >
       <a href="index.html">
-        <span class="text-xl font-bold text-slate-900">OMC <span class="text-emerald-500">MULTISERVICE LLC</span></span>
+        <span class="text-xl font-bold text-slate-900">ABS <span class="text-emerald-500">RETAIL SERVICES LLC</span></span>
       </a>
 
+      <!-- Desktop nav links -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="index.html" data-i18n="Home">Home</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="catalog.html" data-i18n="Catalog">Catalog</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="about-us.html" data-i18n="About Us">About Us</a>
+        <a class="text-sm font-medium text-slate-700 hover:text-emerald-500 transition-colors" href="contact-us.html" data-i18n="Contact Us">Contact Us</a>
+      </nav>
 
       <!-- WhatsApp + Language Selector + Mobile Hamburger -->
       <div class="flex items-center gap-2">
-          <a href="https://wa.me/15613845205" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-1.5 rounded bg-emerald-500 px-3 py-1.5 text-sm font-medium text-white hover:bg-emerald-400 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span data-i18n="WhatsApp">WhatsApp</span>
-          </a>
           <div class="relative flex-shrink-0" id="lang-dropdown-container">
             <button id="lang-toggle" class="flex items-center gap-1.5 border border-slate-900 rounded px-3 py-1.5 text-sm text-slate-900 font-medium hover:bg-slate-50 transition-colors">
               <span id="lang-flag"></span>
@@ -109,265 +111,47 @@
     </section>
     <!-- /Burger menu  -->
 
-    <!-- Nav bar -->
-    <!-- hidden on small devices -->
+<!-- Offer image  -->
 
-    <nav class="relative bg-slate-900">
-      <div
-        class="hidden h-12 w-full items-center justify-center md:flex"
-      >
-        <button
-          @click="desktopMenuOpen = ! desktopMenuOpen"
-          class="flex h-full w-auto cursor-pointer items-center justify-center bg-emerald-500 px-4 whitespace-nowrap"
-        >
-          <div class="flex justify-around" href="#">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="mx-1 h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg><span data-i18n="All categories">All categories</span></div>
-        </button>
-
-        <div class="mx-7 flex gap-8">
-          <a
-            class="font-light text-white duration-100 hover:text-emerald-400 hover:underline"
-            href="index.html"
-             data-i18n="Home">Home</a
-          >
-          <a
-            class="font-light text-white duration-100 hover:text-emerald-400 hover:underline"
-            href="catalog.html"
-             data-i18n="Catalog">Catalog</a
-          >
-          <a
-            class="font-light text-white duration-100 hover:text-emerald-400 hover:underline"
-            href="about-us.html"
-             data-i18n="About Us">About Us</a
-          >
-          <a
-            class="font-light text-white duration-100 hover:text-emerald-400 hover:underline"
-            href="contact-us.html"
-             data-i18n="Contact Us">Contact Us</a
-          >
+    <div class="relative overflow-hidden">
+      <!-- Hero collage: 2x2 grid with overlay -->
+      <div class="grid grid-cols-2 grid-rows-2 h-[400px] sm:h-[480px] lg:h-[520px]">
+        <div class="relative overflow-hidden">
+          <img class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-110" src="./assets/images/cat-cleaning-new.jpg" alt="Cleaning products" />
+          <div class="absolute inset-0 bg-black/40"></div>
+          <span class="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-900" data-i18n="Cleaning">Cleaning</span>
         </div>
-
-        
-      </div>
-    </nav>
-    <!-- /Nav bar -->
-
-    <!-- Menu  -->
-    <section
-      x-show="desktopMenuOpen"
-      @click.outside="desktopMenuOpen = false"
-      class="absolute left-0 right-0 z-50 w-full border-b border-r border-l bg-white shadow-lg"
-      style="display: none"
-    >
-      <div class="mx-auto flex max-w-[1200px] py-10">
-        <div class="w-[300px] border-r">
-          <ul class="px-5">
-            <li
-              @mouseenter="activeCategory = 'appliances'"
-              :class="activeCategory === 'appliances' ? 'bg-emerald-500' : 'hover:bg-neutral-100'"
-              class="active:blue-900 flex cursor-pointer items-center gap-2 py-2 px-3 active:bg-emerald-500"
-            >
-              <img
-                width="15px"
-                height="15px"
-                src="./assets/images/bed.svg"
-                alt="Bedroom icon"
-              />
-              <span data-i18n="Appliances">Appliances</span>
-            </li>
-
-            <li
-              @mouseenter="activeCategory = 'auto-parts'"
-              :class="activeCategory === 'auto-parts' ? 'bg-emerald-500' : 'hover:bg-neutral-100'"
-              class="active:blue-900 flex cursor-pointer items-center gap-2 py-2 px-3 active:bg-emerald-500"
-            >
-              <img
-                width="15px"
-                height="15px"
-                src="./assets/images/sleep.svg"
-                alt="Auto Parts icon"
-              />
-              <span data-i18n="Auto Parts">Auto Parts</span>
-            </li>
-
-            <li
-              @mouseenter="activeCategory = 'food-groceries'"
-              :class="activeCategory === 'food-groceries' ? 'bg-emerald-500' : 'hover:bg-neutral-100'"
-              class="active:blue-900 flex cursor-pointer items-center gap-2 py-2 px-3 active:bg-emerald-500"
-            >
-              <img
-                width="15px"
-                height="15px"
-                src="./assets/images/outdoor.svg"
-                alt="Food & Groceries icon"
-              />
-              <span data-i18n="Food &amp; Groceries">Food & Groceries</span>
-            </li>
-
-          </ul>
+        <div class="relative overflow-hidden">
+          <img class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-110" src="./assets/images/cat-clothing-new.jpg" alt="Clothing collection" />
+          <div class="absolute inset-0 bg-black/40"></div>
+          <span class="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-900" data-i18n="Clothing">Clothing</span>
         </div>
-
-        <div class="flex w-full pl-6">
-
-          <!-- Appliances panel -->
-          <div x-show="activeCategory === 'appliances'" class="flex w-full flex-col">
-            <p class="mb-3 font-medium text-gray-500 uppercase" data-i18n="Appliances">APPLIANCES</p>
-            <div class="grid grid-cols-3 gap-x-8 gap-y-2 text-sm">
-              <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Samsung WD Pro</span><span class="text-gray-400">$899</span>
-              </a>
-              <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>LG TurboWash 360</span><span class="text-gray-400">$1,049</span>
-              </a>
-              <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Whirlpool HE Washer</span><span class="text-gray-400">$749</span>
-              </a>
-              <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Bosch Series 8</span><span class="text-gray-400">$1,199</span>
-              </a>
-              <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Haier HW100</span><span class="text-gray-400">$649</span>
-              </a>
-              <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Miele WCG660</span><span class="text-gray-400">$1,599</span>
-              </a>
-              <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Electrolux EFLW427</span><span class="text-gray-400">$829</span>
-              </a>
-              <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Speed Queen TC5</span><span class="text-gray-400">$979</span>
-              </a>
-              <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Maytag MHW5630</span><span class="text-gray-400">$699</span>
-              </a>
-            </div>
-            <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="mt-5 inline-block self-start bg-emerald-500 px-5 py-2 text-sm font-medium text-black hover:bg-emerald-400">
-              <span data-i18n="See full catalog">See full catalog</span> →
-            </a>
-          </div>
-
-          <!-- Auto Parts panel -->
-          <div x-show="activeCategory === 'auto-parts'" class="flex w-full flex-col">
-            <p class="mb-3 font-medium text-gray-500 uppercase" data-i18n="Auto Parts">AUTO PARTS</p>
-            <div class="grid grid-cols-3 gap-x-8 gap-y-2 text-sm">
-              <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Brake Pads Set</span><span class="text-gray-400">$49</span>
-              </a>
-              <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Oil Filter Pack</span><span class="text-gray-400">$12</span>
-              </a>
-              <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Spark Plugs (4-pack)</span><span class="text-gray-400">$28</span>
-              </a>
-              <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Car Battery 12V</span><span class="text-gray-400">$139</span>
-              </a>
-              <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Alternator Universal</span><span class="text-gray-400">$189</span>
-              </a>
-              <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Radiator Coolant 1gal</span><span class="text-gray-400">$18</span>
-              </a>
-              <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Headlight Bulbs H11</span><span class="text-gray-400">$35</span>
-              </a>
-              <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Wiper Blades 22"</span><span class="text-gray-400">$24</span>
-              </a>
-              <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Air Filter Premium</span><span class="text-gray-400">$22</span>
-              </a>
-            </div>
-            <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="mt-5 inline-block self-start bg-emerald-500 px-5 py-2 text-sm font-medium text-black hover:bg-emerald-400">
-              <span data-i18n="See full catalog">See full catalog</span> →
-            </a>
-          </div>
-
-          <!-- Food & Groceries panel -->
-          <div x-show="activeCategory === 'food-groceries'" class="flex w-full flex-col">
-            <p class="mb-3 font-medium text-gray-500 uppercase" data-i18n="Food &amp; Groceries">FOOD & GROCERIES</p>
-            <div class="grid grid-cols-3 gap-x-8 gap-y-2 text-sm">
-              <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Rice Bag 25lb</span><span class="text-gray-400">$18</span>
-              </a>
-              <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Olive Oil Extra Virgin</span><span class="text-gray-400">$12</span>
-              </a>
-              <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Canned Beans (12-pk)</span><span class="text-gray-400">$15</span>
-              </a>
-              <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Pasta Variety Pack</span><span class="text-gray-400">$9</span>
-              </a>
-              <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Cooking Oil 1gal</span><span class="text-gray-400">$8</span>
-              </a>
-              <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Sugar 10lb Bag</span><span class="text-gray-400">$7</span>
-              </a>
-              <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Flour All-Purpose 10lb</span><span class="text-gray-400">$6</span>
-              </a>
-              <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Coffee Ground 2lb</span><span class="text-gray-400">$14</span>
-              </a>
-              <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="flex justify-between gap-4 hover:text-emerald-600">
-                <span>Tomato Sauce (6-pk)</span><span class="text-gray-400">$10</span>
-              </a>
-            </div>
-            <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" class="mt-5 inline-block self-start bg-emerald-500 px-5 py-2 text-sm font-medium text-black hover:bg-emerald-400">
-              <span data-i18n="See full catalog">See full catalog</span> →
-            </a>
-          </div>
-
-
-
+        <div class="relative overflow-hidden">
+          <img class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-110" src="./assets/images/cat-batteries-new.jpg" alt="Batteries and power" />
+          <div class="absolute inset-0 bg-black/40"></div>
+          <span class="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-900" data-i18n="Batteries">Batteries</span>
         </div>
-      </div>
-    </section>
-
-    <!-- /Menu  -->
-
-    <!-- Offer image  -->
-
-    <div class="relative overflow-hidden lg:h-[500px]">
-      <!-- Collage de 3 categorías -->
-      <div class="grid grid-cols-3 h-full min-h-[250px] sm:min-h-[350px] lg:min-h-0">
-        <div class="relative">
-          <img class="absolute inset-0 h-full w-full object-cover brightness-[0.3]" src="./assets/images/hero-appliances.jpg" alt="Appliances" />
-          <span class="absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-black/50 px-3 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white" data-i18n="Appliances">Appliances</span>
-        </div>
-        <div class="relative">
-          <img class="absolute inset-0 h-full w-full object-cover brightness-[0.3]" src="./assets/images/hero-autoparts.jpg" alt="Auto Parts" />
-          <span class="absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-black/50 px-3 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white" data-i18n="Auto Parts">Auto Parts</span>
-        </div>
-        <div class="relative">
-          <img class="absolute inset-0 h-full w-full object-cover brightness-[0.3]" src="./assets/images/hero-groceries.jpg" alt="Food & Groceries" />
-          <span class="absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-black/50 px-3 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white" data-i18n="Food & Groceries">Food & Groceries</span>
+        <div class="relative overflow-hidden">
+          <img class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-110" src="./assets/images/cat-food-new.jpg" alt="Food and groceries" />
+          <div class="absolute inset-0 bg-black/40"></div>
+          <span class="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-900" data-i18n="Food &amp; Groceries">Food & Groceries</span>
         </div>
       </div>
 
-      <div
-        class="absolute top-1/2 left-1/2 z-10 mx-auto flex w-11/12 max-w-[1200px] -translate-x-1/2 -translate-y-1/2 flex-col items-center text-center text-white"
-      >
-        <h1 class="text-4xl font-bold sm:text-5xl lg:text-6xl" data-i18n="Everything You Need, All in One Place">
-          Everything You Need, All in One Place
-        </h1>
-        <p class="pt-4 text-sm sm:text-base lg:text-xl lg:pt-6 max-w-2xl">
-          <span data-i18n="Your one-stop shop for appliances, auto parts & groceries. Quality products, unbeatable prices.">Your one-stop shop for appliances, auto parts & groceries. Quality products, unbeatable prices.</span></p>
+      <!-- Centered text overlay -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="bg-black/60 backdrop-blur-sm rounded-2xl px-8 py-8 sm:px-14 sm:py-10 text-center max-w-2xl mx-4">
+          <h1 class="text-3xl font-bold text-white sm:text-4xl lg:text-5xl leading-tight" data-i18n="Quality Products, Unbeatable Prices">
+            Quality Products, Unbeatable Prices
+          </h1>
+          <p class="pt-3 text-sm sm:text-base text-gray-200 lg:pt-4">
+            <span data-i18n="From everyday essentials to specialty items — cleaning, clothing, batteries & fresh groceries delivered with care.">From everyday essentials to specialty items — cleaning, clothing, batteries & fresh groceries delivered with care.</span>
+          </p>
+          <a href="https://wa.me/13057996921" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-6 py-3 font-medium text-white hover:bg-emerald-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-i18n="Chat on WhatsApp">Chat on WhatsApp</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -377,167 +161,79 @@
 
     <section class="mx-auto my-10 max-w-[1200px] grid grid-cols-1 gap-5 px-5 sm:grid-cols-3">
 
-      <!-- Free Delivery -->
-      <div class="flex flex-col items-center rounded-lg bg-white py-8 px-5 border border-gray-100 shadow-[0_0_15px_rgba(0,0,0,0.08)]">
-        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-7 w-7 text-emerald-600">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
+      <!-- Trusted Brands -->
+      <div class="flex items-center gap-4 rounded-lg bg-white py-6 px-5 border border-gray-100 border-l-4 border-l-emerald-500 shadow-[0_0_15px_rgba(0,0,0,0.08)]">
+        <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-emerald-600">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/>
           </svg>
         </div>
-        <h3 class="mt-4 text-sm font-bold text-slate-900" data-i18n="Free Delivery">Free Delivery</h3>
-        <p class="mt-1 text-xs text-gray-500" data-i18n="Orders from $200">Orders from $200</p>
+        <div>
+          <h3 class="text-sm font-bold text-slate-900" data-i18n="Trusted Brands">Trusted Brands</h3>
+          <p class="mt-0.5 text-xs text-gray-500" data-i18n="Top-quality products only">Top-quality products only</p>
+        </div>
       </div>
 
-      <!-- Money Returns -->
-      <div class="flex flex-col items-center rounded-lg bg-white py-8 px-5 border border-gray-100 shadow-[0_0_15px_rgba(0,0,0,0.08)]">
-        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-7 w-7 text-emerald-600">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+      <!-- Secure Payments -->
+      <div class="flex items-center gap-4 rounded-lg bg-white py-6 px-5 border border-gray-100 border-l-4 border-l-emerald-500 shadow-[0_0_15px_rgba(0,0,0,0.08)]">
+        <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-emerald-600">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/>
           </svg>
         </div>
-        <h3 class="mt-4 text-sm font-bold text-slate-900" data-i18n="Money returns">Money returns</h3>
-        <p class="mt-1 text-xs text-gray-500" data-i18n="30 Days guarantee">30 Days guarantee</p>
+        <div>
+          <h3 class="text-sm font-bold text-slate-900" data-i18n="Secure Payments">Secure Payments</h3>
+          <p class="mt-0.5 text-xs text-gray-500" data-i18n="100% protected checkout">100% protected checkout</p>
+        </div>
       </div>
 
-      <!-- 24/7 Support -->
-      <div class="flex flex-col items-center rounded-lg bg-white py-8 px-5 border border-gray-100 shadow-[0_0_15px_rgba(0,0,0,0.08)]">
-        <div class="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-7 w-7 text-emerald-600">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/>
+      <!-- Fast Shipping -->
+      <div class="flex items-center gap-4 rounded-lg bg-white py-6 px-5 border border-gray-100 border-l-4 border-l-emerald-500 shadow-[0_0_15px_rgba(0,0,0,0.08)]">
+        <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-emerald-600">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
           </svg>
         </div>
-        <h3 class="mt-4 text-sm font-bold text-slate-900" data-i18n="24/7 Supports">24/7 Supports</h3>
-        <p class="mt-1 text-xs text-gray-500" data-i18n="Consumer support">Consumer support</p>
+        <div>
+          <h3 class="text-sm font-bold text-slate-900" data-i18n="Fast Shipping">Fast Shipping</h3>
+          <p class="mt-0.5 text-xs text-gray-500" data-i18n="Delivered to your door">Delivered to your door</p>
+        </div>
       </div>
 
     </section>
 
     <!-- /Benefits cards -->
 
-    <!-- Auto Parts Promo Banner -->
-    <section class="mx-auto mt-10 max-w-[1200px] px-5">
-
-      <!-- Row 1: 3 equal cards -->
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-
-        <!-- Card 1 — Windshields & Glass -->
-        <a href="catalog.html" onclick="event.preventDefault();location.href=this.href+'?category=auto-parts'" class="group relative overflow-hidden rounded-xl shadow-lg h-[260px] block">
-          <img src="./assets/images/autoparts-windshield.jpg" alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
-          <div class="absolute bottom-0 left-0 p-5 text-white">
-            <span class="mb-2 inline-block rounded bg-red-600 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider">New</span>
-            <h3 class="text-xl font-extrabold leading-tight" data-i18n="Windshields &amp; Auto Glass">Windshields &amp; Auto Glass</h3>
-            <p class="mt-1 text-sm text-gray-300" data-i18n="OEM &amp; aftermarket for all makes">OEM &amp; aftermarket for all makes</p>
-          </div>
-          <div class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all duration-300 group-hover:bg-emerald-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </div>
-        </a>
-
-        <!-- Card 2 — Engine Parts -->
-        <a href="catalog.html" onclick="event.preventDefault();location.href=this.href+'?category=auto-parts'" class="group relative overflow-hidden rounded-xl shadow-lg h-[260px] block">
-          <img src="./assets/images/autoparts-engine.jpg" alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
-          <div class="absolute bottom-0 left-0 p-5 text-white">
-            <h3 class="text-xl font-extrabold leading-tight" data-i18n="Engine Components">Engine Components</h3>
-            <p class="mt-1 text-sm text-gray-300" data-i18n="Performance &amp; reliability guaranteed">Performance &amp; reliability guaranteed</p>
-          </div>
-          <div class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all duration-300 group-hover:bg-emerald-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </div>
-        </a>
-
-        <!-- Card 3 — Headlights & Lighting -->
-        <a href="catalog.html" onclick="event.preventDefault();location.href=this.href+'?category=auto-parts'" class="group relative overflow-hidden rounded-xl shadow-lg h-[260px] block sm:col-span-2 lg:col-span-1">
-          <img src="./assets/images/autoparts-headlights.jpg" alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
-          <div class="absolute bottom-0 left-0 p-5 text-white">
-            <span class="mb-2 inline-block rounded bg-emerald-500 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-black">Best Seller</span>
-            <h3 class="text-xl font-extrabold leading-tight" data-i18n="Headlights &amp; Lighting">Headlights &amp; Lighting</h3>
-            <p class="mt-1 text-sm text-gray-300" data-i18n="LED, halogen &amp; HID options">LED, halogen &amp; HID options</p>
-          </div>
-          <div class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all duration-300 group-hover:bg-emerald-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </div>
-        </a>
-      </div>
-
-      <!-- Row 2: wide featured card + smaller card -->
-      <div class="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-5">
-
-        <!-- Card 4 — Brake Systems (featured, wider) -->
-        <a href="catalog.html" onclick="event.preventDefault();location.href=this.href+'?category=auto-parts'" class="group relative overflow-hidden rounded-xl shadow-lg h-[280px] block lg:col-span-3">
-          <img src="./assets/images/autoparts-brakes.jpg" alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10"></div>
-          <div class="absolute left-5 top-5 rounded-lg bg-yellow-400 px-3 py-1.5 shadow-lg">
-            <p class="text-xs font-extrabold uppercase text-black tracking-wide" data-i18n="Up to 25% OFF">Up to 25% OFF</p>
-          </div>
-          <div class="absolute bottom-0 left-0 p-6 text-white">
-            <h3 class="text-3xl font-extrabold leading-tight" data-i18n="Brake Systems &amp; Parts">Brake Systems &amp; Parts</h3>
-            <p class="mt-2 text-sm text-gray-300" data-i18n="Pads, rotors, calipers &amp; more">Pads, rotors, calipers &amp; more</p>
-            <span class="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-black transition-colors duration-200 group-hover:bg-emerald-400" data-i18n="Shop Now">
-              Shop Now
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- Card 5 — Mirrors & Accessories -->
-        <a href="catalog.html" onclick="event.preventDefault();location.href=this.href+'?category=auto-parts'" class="group relative overflow-hidden rounded-xl shadow-lg h-[280px] block lg:col-span-2">
-          <img src="./assets/images/autoparts-mirrors.jpg" alt="" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
-          <div class="absolute bottom-0 left-0 p-5 text-white">
-            <span class="mb-2 inline-block rounded bg-sky-500 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white" data-i18n="Free Shipping">Free Shipping</span>
-            <h3 class="text-xl font-extrabold leading-tight" data-i18n="Mirrors &amp; Accessories">Mirrors &amp; Accessories</h3>
-            <p class="mt-1 text-sm text-gray-300" data-i18n="Side mirrors, rearview &amp; trim parts">Side mirrors, rearview &amp; trim parts</p>
-          </div>
-          <div class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all duration-300 group-hover:bg-emerald-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-          </div>
-        </a>
-
-      </div>
-
-      <!-- Full-width CTA strip -->
-      <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl bg-slate-900 px-6 py-4 shadow-lg md:px-10">
-        <div class="flex items-center gap-4">
-          <div class="hidden h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 sm:flex">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-emerald-400">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
-            </svg>
-          </div>
-          <div>
-            <p class="text-lg font-bold text-white" data-i18n="Auto Parts for Every Make &amp; Model">Auto Parts for Every Make &amp; Model</p>
-            <p class="text-sm text-gray-400" data-i18n="Windshields, mirrors, brakes, engines &amp; more — shipped to your door">Windshields, mirrors, brakes, engines &amp; more — shipped to your door</p>
-          </div>
-        </div>
-        <a href="catalog.html" onclick="event.preventDefault();location.href=this.href+'?category=auto-parts'" class="shrink-0 rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-bold text-black transition-colors duration-200 hover:bg-emerald-400" data-i18n="Browse All Parts">Browse All Parts</a>
-      </div>
-    </section>
-    <!-- /Auto Parts Promo Banner -->
 
     <h2 class="mx-auto mb-5 max-w-[1200px] px-5 mt-10" data-i18n="SHOP BY CATEGORY">SHOP BY CATEGORY</h2>
 
     <!-- Cathegories -->
-    <section class="mx-auto grid max-w-[1200px] grid-cols-2 gap-3 px-5 lg:grid-cols-3 lg:gap-5">
+    <section class="mx-auto grid max-w-[1200px] grid-cols-2 gap-3 px-5 lg:grid-cols-4 lg:gap-5">
 
-      <a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">
+      <a href="catalog.html" data-category="cleaning" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">
         <div class="relative cursor-pointer overflow-hidden rounded-lg h-48 lg:h-64">
-          <img class="h-full w-full object-cover brightness-50 duration-300 hover:brightness-75 hover:scale-105 transition-all" src="./assets/images/cat-appliances.jpg" alt="Appliances" />
-          <p class="pointer-events-none absolute top-1/2 left-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 text-center text-white text-lg font-semibold lg:text-2xl drop-shadow" data-i18n="Appliances">Appliances</p>
+          <img class="h-full w-full object-cover brightness-50 duration-300 hover:brightness-75 hover:scale-105 transition-all" src="./assets/images/cat-cleaning-new.jpg" alt="Cleaning" />
+          <p class="pointer-events-none absolute top-1/2 left-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 text-center text-white text-lg font-semibold lg:text-2xl drop-shadow" data-i18n="Cleaning">Cleaning</p>
         </div>
       </a>
 
-      <a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">
+      <a href="catalog.html" data-category="clothing" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">
         <div class="relative cursor-pointer overflow-hidden rounded-lg h-48 lg:h-64">
-          <img class="h-full w-full object-cover brightness-50 duration-300 hover:brightness-75 hover:scale-105 transition-all" src="./assets/images/cat-auto-parts.jpg" alt="Auto Parts" />
-          <p class="pointer-events-none absolute top-1/2 left-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 text-center text-white text-lg font-semibold lg:text-2xl drop-shadow" data-i18n="Auto Parts">Auto Parts</p>
+          <img class="h-full w-full object-cover brightness-50 duration-300 hover:brightness-75 hover:scale-105 transition-all" src="./assets/images/cat-clothing-new.jpg" alt="Clothing" />
+          <p class="pointer-events-none absolute top-1/2 left-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 text-center text-white text-lg font-semibold lg:text-2xl drop-shadow" data-i18n="Clothing">Clothing</p>
+        </div>
+      </a>
+
+      <a href="catalog.html" data-category="batteries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">
+        <div class="relative cursor-pointer overflow-hidden rounded-lg h-48 lg:h-64">
+          <img class="h-full w-full object-cover brightness-50 duration-300 hover:brightness-75 hover:scale-105 transition-all" src="./assets/images/cat-batteries-new.jpg" alt="Batteries" />
+          <p class="pointer-events-none absolute top-1/2 left-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 text-center text-white text-lg font-semibold lg:text-2xl drop-shadow" data-i18n="Batteries">Batteries</p>
         </div>
       </a>
 
       <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category">
         <div class="relative cursor-pointer overflow-hidden rounded-lg h-48 lg:h-64">
-          <img class="h-full w-full object-cover brightness-50 duration-300 hover:brightness-75 hover:scale-105 transition-all" src="./assets/images/cat-food-groceries.jpg" alt="Food & Groceries" />
+          <img class="h-full w-full object-cover brightness-50 duration-300 hover:brightness-75 hover:scale-105 transition-all" src="./assets/images/cat-food-new.jpg" alt="Food & Groceries" />
           <p class="pointer-events-none absolute top-1/2 left-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 text-center text-white text-lg font-semibold lg:text-2xl drop-shadow" data-i18n="Food &amp; Groceries">Food & Groceries</p>
         </div>
       </a>
@@ -549,251 +245,103 @@
 
     <p class="mx-auto mt-10 mb-5 max-w-[1200px] px-5" data-i18n="TOP NEW ARRIVAL">TOP NEW ARRIVAL</p>
 
-        <!-- Top New Arrival Grid -->
-
     <section class="mx-auto grid max-w-[1200px] grid-cols-2 gap-3 px-5 pb-10 lg:grid-cols-4">
 
-      <!-- Samsung Front Load 8kg -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/washing-1.jpg" alt="Samsung Front Load 8kg" />
+      <div class="flex flex-col h-full"><div class="relative flex h-56 overflow-hidden"><img class="w-full object-contain bg-gray-50 p-3" src="./assets/images/cleaning-11.jpg" alt="Head & Shoulders Classic Shampoo 400ml" />
           <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Samsung%20Front%20Load%208kg&p=699&po=849&img=washing-1.jpg&r=4.5&rv=120&cat=appliances">
+            <a href="product-detail.html#n=Head+%26+Shoulders+Classic+Shampoo+400ml&p=6.49&po=8.99&img=cleaning-11.jpg&b=Head+%26+Shoulders&m=HS-400CL&d=Shampoo+anticaspa+cl%C3%A1sico%2C+400ml.+Limpia+y+protege+el+cuero+cabelludo+desde+el+primer+uso.&r=4.6&rv=387&cat=cleaning">
               <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
               </span>
             </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
           </div>
           <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 18&percnt; OFF</p>
+            <p class="px-2 py-2 text-sm">&minus; 28&percnt; OFF</p>
           </div>
+        </div><div class="flex-grow flex flex-col"><p class="mt-2 font-medium text-sm uppercase line-clamp-2">Head & Shoulders Classic Shampoo 400ml</p>
+          <p class="font-medium text-slate-900">$6.49 <span class="text-sm text-gray-500 line-through">$8.99</span></p>
+          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(387)</span></div>
         </div>
-        <div>
-          <p class="mt-2 font-medium">SAMSUNG FRONT LOAD 8KG</p>
-          <p class="font-medium text-slate-900">$699 <span class="text-sm text-gray-500 line-through">$849</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(120)</span></div>
-        </div>
-        <a href="product-detail.html#n=Samsung%20Front%20Load%208kg&p=699&po=849&img=washing-1.jpg&r=4.5&rv=120&cat=appliances" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Head+%26+Shoulders+Classic+Shampoo+400ml&p=6.49&po=8.99&img=cleaning-11.jpg&b=Head+%26+Shoulders&m=HS-400CL&d=Shampoo+anticaspa+cl%C3%A1sico%2C+400ml.+Limpia+y+protege+el+cuero+cabelludo+desde+el+primer+uso.&r=4.6&rv=387&cat=cleaning" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
 
-      <!-- Pastillas de Freno Bosch -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/auto-1.jpg" alt="Pastillas de Freno Bosch" />
+      <div class="flex flex-col h-full"><div class="relative flex h-56 overflow-hidden"><img class="w-full object-contain bg-gray-50 p-3" src="./assets/images/clothing-1.jpg" alt="Hanes ComfortSoft T-Shirt 3pk" />
           <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Pastillas%20de%20Freno%20Bosch&p=49.99&po=59.99&img=auto-1.jpg&r=4.8&rv=234&cat=auto-parts">
+            <a href="product-detail.html#n=Hanes+ComfortSoft+T-Shirt+3pk&p=14.99&po=19.99&img=clothing-1.jpg&b=Hanes&m=HNS-3PK-W&d=Pack+de+3+camisetas+Hanes+ComfortSoft%2C+algod%C3%B3n+100%25.+Disponible+en+blanco%2C+cuello+redondo.&r=4.5&rv=312&cat=clothing">
               <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
               </span>
             </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
           </div>
           <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 17&percnt; OFF</p>
+            <p class="px-2 py-2 text-sm">&minus; 25&percnt; OFF</p>
           </div>
+        </div><div class="flex-grow flex flex-col"><p class="mt-2 font-medium text-sm uppercase line-clamp-2">Hanes ComfortSoft T-Shirt 3pk</p>
+          <p class="font-medium text-slate-900">$14.99 <span class="text-sm text-gray-500 line-through">$19.99</span></p>
+          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(312)</span></div>
         </div>
-        <div>
-          <p class="mt-2 font-medium">PASTILLAS DE FRENO BOSCH</p>
-          <p class="font-medium text-slate-900">$49.99 <span class="text-sm text-gray-500 line-through">$59.99</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(234)</span></div>
-        </div>
-        <a href="product-detail.html#n=Pastillas%20de%20Freno%20Bosch&p=49.99&po=59.99&img=auto-1.jpg&r=4.8&rv=234&cat=auto-parts" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Hanes+ComfortSoft+T-Shirt+3pk&p=14.99&po=19.99&img=clothing-1.jpg&b=Hanes&m=HNS-3PK-W&d=Pack+de+3+camisetas+Hanes+ComfortSoft%2C+algod%C3%B3n+100%25.+Disponible+en+blanco%2C+cuello+redondo.&r=4.5&rv=312&cat=clothing" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
 
-      <!-- Arroz Goya 20lb -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/food-1.jpg" alt="Arroz Goya 20lb" />
+      <div class="flex flex-col h-full"><div class="relative flex h-56 overflow-hidden"><img class="w-full object-contain bg-gray-50 p-3" src="./assets/images/battery-1.jpg" alt="Optima RedTop 35 Car Battery 12V" />
           <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Arroz%20Goya%2020lb&p=18.99&po=22.99&img=food-1.jpg&r=4.8&rv=234&cat=food-groceries">
+            <a href="product-detail.html#n=Optima+RedTop+35+Car+Battery+12V&p=219.99&po=269.99&img=battery-1.jpg&b=Optima&m=OPT-35RT&d=Bater%C3%ADa+de+auto+Optima+RedTop+35%2C+12V+720CCA.+Arranque+superior+en+climas+extremos.+Resistente+a+vibraciones%2C+ideal+para+sedanes+y+SUVs.&r=4.8&rv=456&cat=batteries">
               <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
               </span>
             </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
           </div>
           <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 17&percnt; OFF</p>
+            <p class="px-2 py-2 text-sm">&minus; 19&percnt; OFF</p>
           </div>
+        </div><div class="flex-grow flex flex-col"><p class="mt-2 font-medium text-sm uppercase line-clamp-2">Optima RedTop 35 Car Battery 12V</p>
+          <p class="font-medium text-slate-900">$219.99 <span class="text-sm text-gray-500 line-through">$269.99</span></p>
+          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(456)</span></div>
         </div>
-        <div>
-          <p class="mt-2 font-medium">ARROZ GOYA 20LB</p>
-          <p class="font-medium text-slate-900">$18.99 <span class="text-sm text-gray-500 line-through">$22.99</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(234)</span></div>
-        </div>
-        <a href="product-detail.html#n=Arroz%20Goya%2020lb&p=18.99&po=22.99&img=food-1.jpg&r=4.8&rv=234&cat=food-groceries" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Optima+RedTop+35+Car+Battery+12V&p=219.99&po=269.99&img=battery-1.jpg&b=Optima&m=OPT-35RT&d=Bater%C3%ADa+de+auto+Optima+RedTop+35%2C+12V+720CCA.+Arranque+superior+en+climas+extremos.+Resistente+a+vibraciones%2C+ideal+para+sedanes+y+SUVs.&r=4.8&rv=456&cat=batteries" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
 
-      <!-- LG TurboWash 9kg -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/washing-2.jpg" alt="LG TurboWash 9kg" />
+      <div class="flex flex-col h-full"><div class="relative flex h-56 overflow-hidden"><img class="w-full object-contain bg-gray-50 p-3" src="./assets/images/cleaning-15.jpg" alt="Scrub Daddy Original Sponge 3pk" />
           <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=LG%20TurboWash%209kg&p=799&po=999&img=washing-2.jpg&r=4.8&rv=98&cat=appliances">
+            <a href="product-detail.html#n=Scrub+Daddy+Original+Sponge+3pk&p=5.99&po=7.99&img=cleaning-15.jpg&b=Scrub+Daddy&m=SD-3PK&d=Esponja+Scrub+Daddy%2C+pack+de+3.+Cambia+de+textura+con+la+temperatura+del+agua.+No+raya+superficies.&r=4.7&rv=523&cat=cleaning">
               <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
               </span>
             </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
           </div>
           <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 20&percnt; OFF</p>
+            <p class="px-2 py-2 text-sm">&minus; 25&percnt; OFF</p>
           </div>
+        </div><div class="flex-grow flex flex-col"><p class="mt-2 font-medium text-sm uppercase line-clamp-2">Scrub Daddy Original Sponge 3pk</p>
+          <p class="font-medium text-slate-900">$5.99 <span class="text-sm text-gray-500 line-through">$7.99</span></p>
+          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(523)</span></div>
         </div>
-        <div>
-          <p class="mt-2 font-medium">LG TURBOWASH 9KG</p>
-          <p class="font-medium text-slate-900">$799 <span class="text-sm text-gray-500 line-through">$999</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(98)</span></div>
-        </div>
-        <a href="product-detail.html#n=LG%20TurboWash%209kg&p=799&po=999&img=washing-2.jpg&r=4.8&rv=98&cat=appliances" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Scrub+Daddy+Original+Sponge+3pk&p=5.99&po=7.99&img=cleaning-15.jpg&b=Scrub+Daddy&m=SD-3PK&d=Esponja+Scrub+Daddy%2C+pack+de+3.+Cambia+de+textura+con+la+temperatura+del+agua.+No+raya+superficies.&r=4.7&rv=523&cat=cleaning" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
-
-      <!-- Aceite Motor Mobil 1 5W-30 -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/auto-11.jpg" alt="Aceite Motor Mobil 1 5W-30" />
-          <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Aceite%20Motor%20Mobil%201%205W-30&p=28.99&po=36.99&img=auto-11.jpg&r=4.9&rv=445&cat=auto-parts">
-              <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-              </span>
-            </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
-          </div>
-          <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 22&percnt; OFF</p>
-          </div>
-        </div>
-        <div>
-          <p class="mt-2 font-medium">ACEITE MOTOR MOBIL 1 5W-30</p>
-          <p class="font-medium text-slate-900">$28.99 <span class="text-sm text-gray-500 line-through">$36.99</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(445)</span></div>
-        </div>
-        <a href="product-detail.html#n=Aceite%20Motor%20Mobil%201%205W-30&p=28.99&po=36.99&img=auto-11.jpg&r=4.9&rv=445&cat=auto-parts" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
-      </div>
-
-      <!-- Cafe Bustelo 10oz -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/food-4.jpg" alt="Cafe Bustelo 10oz" />
-          <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Cafe%20Bustelo%2010oz&p=5.99&po=7.49&img=food-4.jpg&r=4.8&rv=445&cat=food-groceries">
-              <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-              </span>
-            </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
-          </div>
-          <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 20&percnt; OFF</p>
-          </div>
-        </div>
-        <div>
-          <p class="mt-2 font-medium">CAFE BUSTELO 10OZ</p>
-          <p class="font-medium text-slate-900">$5.99 <span class="text-sm text-gray-500 line-through">$7.49</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(445)</span></div>
-        </div>
-        <a href="product-detail.html#n=Cafe%20Bustelo%2010oz&p=5.99&po=7.49&img=food-4.jpg&r=4.8&rv=445&cat=food-groceries" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
-      </div>
-
-      <!-- Filtro de Aire K&N -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/auto-9.jpg" alt="Filtro de Aire K&N" />
-          <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Filtro%20de%20Aire%20K%26N&p=21.99&po=27.99&img=auto-9.jpg&r=4.8&rv=88&cat=auto-parts">
-              <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-              </span>
-            </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
-          </div>
-          <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 21&percnt; OFF</p>
-          </div>
-        </div>
-        <div>
-          <p class="mt-2 font-medium">FILTRO DE AIRE K&N</p>
-          <p class="font-medium text-slate-900">$21.99 <span class="text-sm text-gray-500 line-through">$27.99</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(88)</span></div>
-        </div>
-        <a href="product-detail.html#n=Filtro%20de%20Aire%20K%26N&p=21.99&po=27.99&img=auto-9.jpg&r=4.8&rv=88&cat=auto-parts" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
-      </div>
-
-      <!-- Bosch Serie 6 8kg -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/washing-3.jpg" alt="Bosch Serie 6 8kg" />
-          <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Bosch%20Serie%206%208kg&p=750&po=900&img=washing-3.jpg&r=4.7&rv=75&cat=appliances">
-              <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-              </span>
-            </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
-          </div>
-          <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 17&percnt; OFF</p>
-          </div>
-        </div>
-        <div>
-          <p class="mt-2 font-medium">BOSCH SERIE 6 8KG</p>
-          <p class="font-medium text-slate-900">$750 <span class="text-sm text-gray-500 line-through">$900</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(75)</span></div>
-        </div>
-        <a href="product-detail.html#n=Bosch%20Serie%206%208kg&p=750&po=900&img=washing-3.jpg&r=4.7&rv=75&cat=appliances" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
-      </div>
-
     </section>
 
-    <!-- Coupon promo card -->
+<!-- Cleaning promo banner -->
 
     <div class="mx-auto max-w-[1200px] px-5">
-      <section
-        class="mt-10 flex max-w-[1200px] justify-between bg-slate-900 px-5"
-      >
-        <div class="py-8 px-3 lg:px-16">
-          <p class="text-white" data-i18n="EXCLUSIVE COUPON">EXCLUSIVE COUPON</p>
-          <h2 class="pt-6 text-5xl font-bold text-yellow-400" data-i18n="Use code: AUTOPARTS15">Use code: AUTOPARTS15</h2>
-          <p class="pt-4 text-white" data-i18n="Save 15% on all auto parts. Apply at checkout!">
-            Save 15% on all auto parts. <br />
-            Apply at checkout!
-          </p>
-          <a
-            href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category"
-            class="mt-6 inline-block bg-emerald-500 px-4 py-2 duration-100 hover:bg-emerald-400"
-            data-i18n="Shop Auto Parts"
-          >
-            Shop Auto Parts
-          </a>
+      <section class="relative mt-10 overflow-hidden rounded-2xl h-[280px] sm:h-[300px]">
+        <img src="./assets/images/hero-cleaning.jpg" alt="Cleaning products" class="absolute inset-0 h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/85 to-transparent"></div>
+        <div class="relative z-10 flex h-full items-center px-8 lg:px-14">
+          <div>
+            <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-lg font-extrabold text-white shadow-lg">-20%</span>
+            <h2 class="mt-4 text-3xl font-bold text-white sm:text-4xl" data-i18n="Cleaning Sale">Cleaning Sale</h2>
+            <p class="mt-2 max-w-md text-sm text-gray-300 sm:text-base" data-i18n="Save on all cleaning essentials — detergents, sprays, disinfectants and more.">Save on all cleaning essentials — detergents, sprays, disinfectants and more.</p>
+            <a href="catalog.html" data-category="cleaning" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category"
+              class="mt-5 inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-emerald-400 transition-colors">
+              <span data-i18n="Shop Now">Shop Now</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </a>
+          </div>
         </div>
-
-        <img
-          class="-mr-5 hidden w-[550px] object-cover md:block"
-          src="./assets/images/auto-parts-banner.jpg"
-          alt="Auto parts and car components"
-        />
       </section>
     </div>
 
-    <!-- /Coupon promo card -->
+    <!-- /Cleaning promo banner -->
 
     <p class="mx-auto mt-10 mb-5 max-w-[1200px] px-5" data-i18n="RECOMMENDED FOR YOU">RECOMMENDED FOR YOU</p>
 
@@ -805,7 +353,7 @@
         <div class="relative flex">
           <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/auto-7.jpg" alt="Bombillos LED H11 Sylvania" />
           <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Bombillos%20LED%20H11%20Sylvania&p=34.99&po=44.99&img=auto-7.jpg&r=4.7&rv=201&cat=auto-parts">
+            <a href="product-detail.html#n=Bombillos%20LED%20H11%20Sylvania&p=34.99&po=44.99&img=auto-7.jpg&r=4.7&rv=201&cat=food-groceries">
               <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
               </span>
@@ -823,7 +371,7 @@
           <p class="font-medium text-slate-900">$34.99 <span class="text-sm text-gray-500 line-through">$44.99</span></p>
           <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(201)</span></div>
         </div>
-        <a href="product-detail.html#n=Bombillos%20LED%20H11%20Sylvania&p=34.99&po=44.99&img=auto-7.jpg&r=4.7&rv=201&cat=auto-parts" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Bombillos%20LED%20H11%20Sylvania&p=34.99&po=44.99&img=auto-7.jpg&r=4.7&rv=201&cat=food-groceries" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
 
       <!-- Harina PAN 2lb -->
@@ -849,7 +397,7 @@
           <p class="font-medium text-slate-900">$3.99 <span class="text-sm text-gray-500 line-through">$4.79</span></p>
           <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(312)</span></div>
         </div>
-        <a href="product-detail.html#n=Harina%20PAN%202lb&p=3.99&po=4.79&img=food-6.jpg&r=4.9&rv=312&cat=food-groceries" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Harina%20PAN%202lb&p=3.99&po=4.79&img=food-6.jpg&r=4.9&rv=312&cat=food-groceries" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
 
       <!-- Samsung QLED 55" -->
@@ -857,7 +405,7 @@
         <div class="relative flex">
           <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/tv-1.jpg" alt="Samsung QLED 55"" />
           <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Samsung%20QLED%2055%22&p=799&po=999&img=tv-1.jpg&r=4.7&rv=445&cat=appliances">
+            <a href="product-detail.html#n=Samsung%20QLED%2055%22&p=799&po=999&img=tv-1.jpg&r=4.7&rv=445&cat=food-groceries">
               <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
               </span>
@@ -875,7 +423,7 @@
           <p class="font-medium text-slate-900">$799 <span class="text-sm text-gray-500 line-through">$999</span></p>
           <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(445)</span></div>
         </div>
-        <a href="product-detail.html#n=Samsung%20QLED%2055%22&p=799&po=999&img=tv-1.jpg&r=4.7&rv=445&cat=appliances" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Samsung%20QLED%2055%22&p=799&po=999&img=tv-1.jpg&r=4.7&rv=445&cat=food-groceries" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
 
       <!-- Frijoles Negros Goya -->
@@ -901,152 +449,112 @@
           <p class="font-medium text-slate-900">$2.29 <span class="text-sm text-gray-500 line-through">$2.79</span></p>
           <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(201)</span></div>
         </div>
-        <a href="product-detail.html#n=Frijoles%20Negros%20Goya&p=2.29&po=2.79&img=food-8.jpg&r=4.7&rv=201&cat=food-groceries" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Frijoles%20Negros%20Goya&p=2.29&po=2.79&img=food-8.jpg&r=4.7&rv=201&cat=food-groceries" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
 
     
     </section>
     <!-- /Recommendations -->
 
-    <!-- Food promo banner -->
+    <!-- Groceries promo banner -->
     <div class="mx-auto max-w-[1200px] px-5">
-      <section class="mt-10 flex max-w-[1200px] items-stretch overflow-hidden bg-slate-900">
-        <img
-          class="hidden w-[45%] object-cover md:block"
-          src="./assets/images/promo-groceries-lg.jpg"
-          alt="Fresh groceries and food products"
-        />
-        <div class="flex-1 py-8 px-6 lg:px-12 text-right flex flex-col justify-center">
-          <p class="text-sm text-white" data-i18n="WEEKLY DEALS">WEEKLY DEALS</p>
-          <h2 class="pt-3 text-3xl font-bold text-yellow-400" data-i18n="Fresh Groceries 20% OFF">Fresh Groceries 20% OFF</h2>
-          <p class="pt-2 text-sm text-white" data-i18n="Stock up on essentials — rice, oils, canned goods and more at unbeatable prices.">
-            Stock up on essentials — rice, oils, canned goods and more.
-          </p>
-          <a
-            href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category"
-            class="mt-4 inline-block self-end bg-emerald-500 px-4 py-2 text-sm duration-100 hover:bg-emerald-400"
-            data-i18n="Shop Groceries"
-          >
-            Shop Groceries
-          </a>
+      <section class="relative mt-10 overflow-hidden rounded-2xl h-[280px] sm:h-[300px]">
+        <img src="./assets/images/cat-food-new.jpg" alt="Fresh groceries and food" class="absolute inset-0 h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-l from-slate-900 via-slate-900/85 to-transparent"></div>
+        <div class="relative z-10 flex h-full items-center justify-end px-8 lg:px-14">
+          <div class="text-right">
+            <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-yellow-400 text-lg font-extrabold text-slate-900 shadow-lg">-15%</span>
+            <h2 class="mt-4 text-3xl font-bold text-white sm:text-4xl" data-i18n="Fresh Groceries Sale">Fresh Groceries Sale</h2>
+            <p class="mt-2 max-w-md text-sm text-gray-300 sm:text-base ml-auto" data-i18n="Stock up on rice, oils, canned goods, coffee and more at great prices.">Stock up on rice, oils, canned goods, coffee and more at great prices.</p>
+            <a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category"
+              class="mt-5 inline-flex items-center gap-2 rounded-lg bg-yellow-400 px-5 py-2.5 text-sm font-medium text-slate-900 hover:bg-yellow-300 transition-colors">
+              <span data-i18n="Shop Now">Shop Now</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </a>
+          </div>
         </div>
       </section>
     </div>
-    <!-- /Food promo banner -->
+    <!-- /Groceries promo banner -->
 
     <p class="mx-auto mt-10 mb-5 max-w-[1200px] px-5" data-i18n="BEST SELLERS">BEST SELLERS</p>
 
-    <!-- Best Sellers -->
     <section class="mx-auto grid max-w-[1200px] grid-cols-2 gap-3 px-5 pb-10 lg:grid-cols-4">
 
-      <!-- Bateria 12V DieHard -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/auto-4.jpg" alt="Bateria 12V DieHard" />
+      <div class="flex flex-col h-full"><div class="relative flex h-56 overflow-hidden"><img class="w-full object-contain bg-gray-50 p-3" src="./assets/images/cleaning-2.jpg" alt="Clorox Disinfecting Wipes 75ct" />
           <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Bateria%2012V%20DieHard&p=139.99&po=169.99&img=auto-4.jpg&r=4.6&rv=98&cat=auto-parts">
+            <a href="product-detail.html#n=Clorox+Disinfecting+Wipes+75ct&p=4.99&po=6.49&img=cleaning-2.jpg&b=Clorox&m=CLX-75W&d=Toallitas+desinfectantes%2C+75+unidades.+Elimina+99.9%25+de+g%C3%A9rmenes+y+bacterias.&r=4.8&rv=312&cat=cleaning">
               <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
               </span>
             </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
           </div>
           <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 18&percnt; OFF</p>
+            <p class="px-2 py-2 text-sm">&minus; 23&percnt; OFF</p>
           </div>
-        </div>
-        <div>
-          <p class="mt-2 font-medium">BATERIA 12V DIEHARD</p>
-          <p class="font-medium text-slate-900">$139.99 <span class="text-sm text-gray-500 line-through">$169.99</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(98)</span></div>
-        </div>
-        <a href="product-detail.html#n=Bateria%2012V%20DieHard&p=139.99&po=169.99&img=auto-4.jpg&r=4.6&rv=98&cat=auto-parts" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
-      </div>
-
-      <!-- Leche Evaporada Carnation -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/food-10.jpg" alt="Leche Evaporada Carnation" />
-          <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Leche%20Evaporada%20Carnation&p=2.99&po=3.49&img=food-10.jpg&r=4.5&rv=88&cat=food-groceries">
-              <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-              </span>
-            </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
-          </div>
-          <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 14&percnt; OFF</p>
-          </div>
-        </div>
-        <div>
-          <p class="mt-2 font-medium">LECHE EVAPORADA CARNATION</p>
-          <p class="font-medium text-slate-900">$2.99 <span class="text-sm text-gray-500 line-through">$3.49</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(88)</span></div>
-        </div>
-        <a href="product-detail.html#n=Leche%20Evaporada%20Carnation&p=2.99&po=3.49&img=food-10.jpg&r=4.5&rv=88&cat=food-groceries" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
-      </div>
-
-      <!-- LG OLED 65" -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/tv-2.jpg" alt="LG OLED 65"" />
-          <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=LG%20OLED%2065%22&p=1499&po=1899&img=tv-2.jpg&r=4.9&rv=312&cat=appliances">
-              <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-              </span>
-            </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
-          </div>
-          <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 21&percnt; OFF</p>
-          </div>
-        </div>
-        <div>
-          <p class="mt-2 font-medium">LG OLED 65"</p>
-          <p class="font-medium text-slate-900">$1,499 <span class="text-sm text-gray-500 line-through">$1,899</span></p>
+        </div><div class="flex-grow flex flex-col"><p class="mt-2 font-medium text-sm uppercase line-clamp-2">Clorox Disinfecting Wipes 75ct</p>
+          <p class="font-medium text-slate-900">$4.99 <span class="text-sm text-gray-500 line-through">$6.49</span></p>
           <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(312)</span></div>
         </div>
-        <a href="product-detail.html#n=LG%20OLED%2065%22&p=1499&po=1899&img=tv-2.jpg&r=4.9&rv=312&cat=appliances" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Clorox+Disinfecting+Wipes+75ct&p=4.99&po=6.49&img=cleaning-2.jpg&b=Clorox&m=CLX-75W&d=Toallitas+desinfectantes%2C+75+unidades.+Elimina+99.9%25+de+g%C3%A9rmenes+y+bacterias.&r=4.8&rv=312&cat=cleaning" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
 
-      <!-- Correa Serpentina Gates -->
-      <div class="flex flex-col">
-        <div class="relative flex">
-          <img class="w-full object-cover aspect-square bg-gray-50" src="./assets/images/auto-10.jpg" alt="Correa Serpentina Gates" />
+      <div class="flex flex-col h-full"><div class="relative flex h-56 overflow-hidden"><img class="w-full object-contain bg-gray-50 p-3" src="./assets/images/clothing-2.jpg" alt="Levi's 505 Regular Fit Jeans" />
           <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
-            <a href="product-detail.html#n=Correa%20Serpentina%20Gates&p=31.99&po=39.99&img=auto-10.jpg&r=4.7&rv=267&cat=auto-parts">
+            <a href="product-detail.html#n=Levi%27s+505+Regular+Fit+Jeans&p=39.99&po=59.99&img=clothing-2.jpg&b=Levi%27s&m=LEV-505RF&d=Jeans+Levi%27s+505+corte+regular%2C+denim+cl%C3%A1sico.+Tiro+medio%2C+pierna+recta.&r=4.7&rv=256&cat=clothing">
               <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
               </span>
             </a>
-            <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
-            </span>
           </div>
           <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
-            <p class="px-2 py-2 text-sm">&minus; 20&percnt; OFF</p>
+            <p class="px-2 py-2 text-sm">&minus; 33&percnt; OFF</p>
           </div>
+        </div><div class="flex-grow flex flex-col"><p class="mt-2 font-medium text-sm uppercase line-clamp-2">Levi's 505 Regular Fit Jeans</p>
+          <p class="font-medium text-slate-900">$39.99 <span class="text-sm text-gray-500 line-through">$59.99</span></p>
+          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(256)</span></div>
         </div>
-        <div>
-          <p class="mt-2 font-medium">CORREA SERPENTINA GATES</p>
-          <p class="font-medium text-slate-900">$31.99 <span class="text-sm text-gray-500 line-through">$39.99</span></p>
-          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(267)</span></div>
-        </div>
-        <a href="product-detail.html#n=Correa%20Serpentina%20Gates&p=31.99&po=39.99&img=auto-10.jpg&r=4.7&rv=267&cat=auto-parts" class="mt-3 flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+        <a href="product-detail.html#n=Levi%27s+505+Regular+Fit+Jeans&p=39.99&po=59.99&img=clothing-2.jpg&b=Levi%27s&m=LEV-505RF&d=Jeans+Levi%27s+505+corte+regular%2C+denim+cl%C3%A1sico.+Tiro+medio%2C+pierna+recta.&r=4.7&rv=256&cat=clothing" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
       </div>
 
-    
+      <div class="flex flex-col h-full"><div class="relative flex h-56 overflow-hidden"><img class="w-full object-contain bg-gray-50 p-3" src="./assets/images/battery-9.jpg" alt="Optima YellowTop D34/78 Dual Purpose" />
+          <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
+            <a href="product-detail.html#n=Optima+YellowTop+D34%2F78+Dual+Purpose&p=289.99&po=349.99&img=battery-9.jpg&b=Optima&m=OPT-D3478&d=Bater%C3%ADa+dual+Optima+YellowTop+D34%2F78%2C+12V+750CCA.+Arranque+y+ciclo+profundo+en+uno.+Para+veh%C3%ADculos+con+winches%2C+sistemas+de+audio+y+accesorios.&r=4.9&rv=345&cat=batteries">
+              <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+              </span>
+            </a>
+          </div>
+          <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
+            <p class="px-2 py-2 text-sm">&minus; 17&percnt; OFF</p>
+          </div>
+        </div><div class="flex-grow flex flex-col"><p class="mt-2 font-medium text-sm uppercase line-clamp-2">Optima YellowTop D34/78 Dual Purpose</p>
+          <p class="font-medium text-slate-900">$289.99 <span class="text-sm text-gray-500 line-through">$349.99</span></p>
+          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(345)</span></div>
+        </div>
+        <a href="product-detail.html#n=Optima+YellowTop+D34%2F78+Dual+Purpose&p=289.99&po=349.99&img=battery-9.jpg&b=Optima&m=OPT-D3478&d=Bater%C3%ADa+dual+Optima+YellowTop+D34%2F78%2C+12V+750CCA.+Arranque+y+ciclo+profundo+en+uno.+Para+veh%C3%ADculos+con+winches%2C+sistemas+de+audio+y+accesorios.&r=4.9&rv=345&cat=batteries" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+      </div>
 
+      <div class="flex flex-col h-full"><div class="relative flex h-56 overflow-hidden"><img class="w-full object-contain bg-gray-50 p-3" src="./assets/images/cleaning-20.jpg" alt="Bounty Select-A-Size Paper Towels 6pk" />
+          <div class="absolute flex h-full w-full items-center justify-center gap-3 opacity-0 duration-150 hover:opacity-100">
+            <a href="product-detail.html#n=Bounty+Select-A-Size+Paper+Towels+6pk&p=11.99&po=15.49&img=cleaning-20.jpg&b=Bounty&m=BNT-SAS6&d=Toallas+de+papel+Bounty%2C+6+rollos+dobles.+2x+m%C3%A1s+absorbentes+que+la+marca+l%C3%ADder.+Tama%C3%B1o+seleccionable.&r=4.5&rv=267&cat=cleaning">
+              <span class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-emerald-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+              </span>
+            </a>
+          </div>
+          <div class="absolute right-1 mt-3 flex items-center justify-center bg-emerald-500">
+            <p class="px-2 py-2 text-sm">&minus; 23&percnt; OFF</p>
+          </div>
+        </div><div class="flex-grow flex flex-col"><p class="mt-2 font-medium text-sm uppercase line-clamp-2">Bounty Select-A-Size Paper Towels 6pk</p>
+          <p class="font-medium text-slate-900">$11.99 <span class="text-sm text-gray-500 line-through">$15.49</span></p>
+          <div class="flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-emerald-400"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg><span class="ml-1 text-xs text-gray-500">(267)</span></div>
+        </div>
+        <a href="product-detail.html#n=Bounty+Select-A-Size+Paper+Towels+6pk&p=11.99&po=15.49&img=cleaning-20.jpg&b=Bounty&m=BNT-SAS6&d=Toallas+de+papel+Bounty%2C+6+rollos+dobles.+2x+m%C3%A1s+absorbentes+que+la+marca+l%C3%ADder.+Tama%C3%B1o+seleccionable.&r=4.5&rv=267&cat=cleaning" class="mt-auto flex h-10 w-full items-center justify-center bg-slate-900 text-white text-sm hover:bg-slate-800 duration-100" data-i18n="View Details">View Details</a>
+      </div>
     </section>
-    <!-- /Best Sellers -->
+
+<!-- /Best Sellers -->
 
     <!-- Desktop Footer  -->
 
@@ -1055,9 +563,9 @@
       class="mx-auto w-full max-w-[1200px] justify-between pb-10 flex flex-col lg:flex-row"
     >
       <div class="ml-5">
-        <p class="mt-10 mb-5 text-xl font-bold text-slate-700">OMC <span class="text-emerald-500">MULTISERVICE LLC</span></p>
+        <p class="mt-10 mb-5 text-xl font-bold text-slate-700">ABS <span class="text-emerald-500">RETAIL SERVICES LLC</span></p>
         <p class="pl-0 text-sm text-gray-400">
-          <span data-i18n="Your trusted source for appliances, auto parts & groceries in Riverview, FL.">Your trusted source for appliances, auto parts & groceries in Riverview, FL.</span>
+          <span data-i18n="Your trusted source for cleaning, clothing, batteries & groceries in Riverview, FL.">Your trusted source for cleaning, clothing, batteries & groceries in Riverview, FL.</span>
         </p>
         <div class="mt-10 flex gap-3">
           <a href="#">
@@ -1076,8 +584,9 @@
         <div class="mx-5 mt-10">
           <p class="font-medium text-gray-400 uppercase tracking-wider text-xs" data-i18n="SHOP">SHOP</p>
           <ul class="text-sm leading-8 text-gray-300">
-            <li><a href="catalog.html" data-category="appliances" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Appliances">Appliances</a></li>
-            <li><a href="catalog.html" data-category="auto-parts" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Auto Parts">Auto Parts</a></li>
+            <li><a href="catalog.html" data-category="cleaning" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Cleaning">Cleaning</a></li>
+            <li><a href="catalog.html" data-category="clothing" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Clothing">Clothing</a></li>
+            <li><a href="catalog.html" data-category="batteries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Batteries">Batteries</a></li>
             <li><a href="catalog.html" data-category="food-groceries" onclick="event.preventDefault();location.href=this.href+'?category='+this.dataset.category" data-i18n="Food &amp; Groceries">Food & Groceries</a></li>
           </ul>
         </div>
@@ -1098,8 +607,8 @@
             <li><a href="about-us.html" data-i18n="About Us">About Us</a></li>
             <li><a href="contact-us.html" data-i18n="Contact Us">Contact Us</a></li>
 
-            <li><a href="tel:+18136685884">+1 (813) 668-5884</a></li>
-            <li class="text-gray-400">8215 Stoner Rd Lot 603, Riverview, FL 33569</li>
+            <li><a href="tel:+13057996921">+1 (305) 799-6921</a></li>
+            <li class="text-gray-400">14012 Halstead CT Apt 405, Tampa, FL 33613</li>
           </ul>
         </div>
       </div>

@@ -6,7 +6,7 @@
   "author": "Bogdan Bulakh",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/index.html",
+    "dev": "parcel src/index.html --port 3000",
     "build": "parcel build \"src/*.html\"",
     "update-products": "node update-products.mjs"
   },

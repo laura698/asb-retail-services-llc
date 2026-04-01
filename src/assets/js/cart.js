@@ -17,7 +17,7 @@
   }
 
   // ── Public API (attached to window) ──────────────────────────────────────────
-  window.OMC_Cart = {
+  window.ABS_Cart = {
     getAll()          { return getCart(); },
     count()           { return getCart().reduce((s, i) => s + i.qty, 0); },
     total()           { return getCart().reduce((s, i) => s + i.price * i.qty, 0); },
@@ -69,7 +69,7 @@
   // ── Badge counter ────────────────────────────────────────────────────────────
   function updateBadge() {
     document.querySelectorAll('.cart-badge').forEach(el => {
-      const count = window.OMC_Cart.count();
+      const count = window.ABS_Cart.count();
       el.textContent = count;
       el.style.display = count > 0 ? 'flex' : 'none';
     });

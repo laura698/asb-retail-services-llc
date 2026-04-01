@@ -57,7 +57,42 @@
       "Bash(curl -L -o cat-appliances-new.jpg \"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80\")",
       "Bash(mv cat-auto-parts-new.jpg cat-auto-parts.jpg)",
       "Bash(mv cat-food-groceries-new.jpg cat-food-groceries.jpg)",
-      "Bash(mv cat-appliances-new.jpg cat-appliances.jpg)"
+      "Bash(mv cat-appliances-new.jpg cat-appliances.jpg)",
+      "Bash(sed -i 's/OMC MULTISERVICE LLC/ABS RETAIL SERVICES LLC/g' src/assets/js/lang.js)",
+      "Bash(sed -i 's/OMC Multiservice LLC/ABS Retail Services LLC/g' src/assets/js/lang.js)",
+      "Bash(sed -i 's/OMC_Cart/ABS_Cart/g' src/assets/js/cart.js)",
+      "Bash(find src:*)",
+      "Bash(sed -i 's/Riverview/Tampa/g' src/assets/js/lang.js)",
+      "Bash(ls *.html)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=800&q=80\" -o cat-cleaning-new.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80\" -o cat-clothing-new.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1619641805634-98e04f5e25c1?w=800&q=80\" -o cat-batteries-new.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800&q=80\" -o cat-food-new.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1609692814858-f7cd2f0afa4f?w=800&q=80\" -o cat-batteries-new.jpg)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Laura/Trabajo/Freelance Personal/Raisel Ecommerce/abs retail services llc/src/**)",
+      "Bash(done)",
+      "Bash(cp cat-cleaning-new.jpg cat-cleaning.jpg)",
+      "Bash(cp cat-clothing-new.jpg cat-clothing.jpg)",
+      "Bash(cp cat-batteries-new.jpg cat-batteries.jpg)",
+      "Bash(__NEW_LINE_8acf6ad18fc019dc__ node -e \":*)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80\" -o \"c:/Laura/Trabajo/Freelance Personal/Raisel Ecommerce/abs retail services llc/src/assets/images/cat-batteries-new.jpg\")",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?w=1200&q=80\" -o \"c:/Laura/Trabajo/Freelance Personal/Raisel Ecommerce/abs retail services llc/src/assets/images/hero-batteries.jpg\")",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80\" -o \"c:/Laura/Trabajo/Freelance Personal/Raisel Ecommerce/abs retail services llc/src/assets/images/hero-batteries.jpg\")",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1556740758-90de940a6ed6?w=1200&q=80\" -o about-hero-new.jpg)",
+      "Bash(cp battery-1.jpg battery-3.jpg)",
+      "Bash(cp battery-2.jpg battery-5.jpg)",
+      "Bash(cp battery-4.jpg battery-6.jpg)",
+      "Bash(grep -rn \"hidden md:flex.*wa\\\\.me\\\\|wa\\\\.me.*hidden md:flex\" src/*.html)",
+      "Bash(__NEW_LINE_aa20864c4f6ba6d4__ node -e \":*)",
+      "Bash(__NEW_LINE_bf4267c95d28c1ea__ node -e \":*)",
+      "Bash(ls \"/c/Laura/Trabajo/Freelance Personal/Raisel Ecommerce/abs retail services llc/src/\"*.png \"/c/Laura/Trabajo/Freelance Personal/Raisel Ecommerce/abs retail services llc/src/\"favicon*)",
+      "Bash(ls \"/c/Laura/Trabajo/Freelance Personal/Raisel Ecommerce/abs retail services llc/\"favicon*)",
+      "Bash(ls \"/c/Laura/Trabajo/Freelance Personal/Raisel Ecommerce/abs retail services llc/src/assets/images/\"favicon*)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
     ]
   }
 }

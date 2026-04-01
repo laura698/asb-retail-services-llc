@@ -1,14 +1,14 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "ABS Retail Services LLC",
+    "short_name": "ABS",
     "icons": [
         {
-            "src": "/android-chrome-96x96.png",
-            "sizes": "96x96",
-            "type": "image/png"
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#207891",
     "background_color": "#ffffff",
     "display": "standalone"
 }
