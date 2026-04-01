@@ -186,9 +186,14 @@ for (const { productos } of todosLosProductos) {
     if (img && fs.existsSync(path.join(imgDir, img))) imagenesUsadas.add(img);
   }
 }
-// Añadir imágenes de categoría como fallback
+// Añadir imágenes de categoría como fallback (por si no están en el Excel)
 ['cat-cleaning.jpg','cat-clothing.jpg','cat-batteries.jpg','cat-food-groceries.jpg']
   .forEach(f => imagenesUsadas.add(f));
+
+// Todas las JPG en assets/images: enlaces manuales (p. ej. food-*.jpg en HTML) deben existir en IMAGES
+for (const f of fs.readdirSync(imgDir)) {
+  if (f.toLowerCase().endsWith('.jpg')) imagenesUsadas.add(f);
+}
 
 const entries = [...imagenesUsadas].sort()
   .map(f => `  '${f}': new URL('../images/${f}', import.meta.url).href,`)
